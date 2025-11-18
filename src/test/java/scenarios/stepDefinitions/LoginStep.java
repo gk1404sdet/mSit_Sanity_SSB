@@ -1,0 +1,206 @@
+package scenarios.stepDefinitions;
+
+import context.TestContext;
+import io.cucumber.java.Scenario;
+import io.cucumber.java.en.Given;
+import io.cucumber.java.en.Then;
+import io.cucumber.java.en.When;
+import lombok.extern.slf4j.Slf4j;
+import org.testng.Assert;
+import pages.*;
+import utilities.ConfigLoader;
+import utilities.CredsLoader;
+
+import static hooks.Hooks.driver;
+
+@Slf4j
+public class LoginStep {
+
+    AccountPage accountPage;
+    LoginPage loginPage;
+    CatalogPage catalogPage;
+    TestUtils testUtils;
+    CredsLoader credsLoader;
+    ConfigLoader configLoader;
+    Scenario scenario;
+
+    public LoginStep(TestContext context) {
+
+        accountPage = new AccountPage(context.driver);
+        loginPage = new LoginPage(context.driver);
+        catalogPage = new CatalogPage(context.driver);
+        testUtils = new TestUtils(driver);
+        this.credsLoader = context.credsLoader;
+        this.configLoader = context.configLoader;
+        this.scenario = context.scenario;
+    }
+
+    // Login with Mobile Number
+    @Given("user launches the application")
+    public void user_launches_the_application() {
+
+        scenario.log("***** Mobile Site Application lunched Successfully *****");
+    }
+    @When("user clicks on the Account option in the footer")
+    public void user_clicks_on_the_account_option_in_the_footer() {
+
+        accountPage.clickOnAccount();
+    }
+    @When("user taps on the Login button")
+    public void user_taps_on_the_login_button() {
+
+        loginPage.clickOnLogin();
+    }
+
+    @When("user enters the valid mobile number")
+    public void user_enters_the_valid_mobile_number() {
+
+        String mobile = configLoader.getProperty("login.validMobile");
+        loginPage.enterUserID(mobile);
+    }
+
+    @When("user clicks on the Proceed button")
+    public void user_clicks_on_the_proceed_button() {
+
+        boolean isProceedSuccessful = loginPage.clickOnTheProceedButton();
+        if (!isProceedSuccessful) {
+            if (loginPage.isElementPresent(loginPage.invalidFormatMsg)) {
+                scenario.log("Test failed: Invalid email or phone number format");
+            } else if (loginPage.isElementPresent(loginPage.uidNotFound)) {
+                scenario.log("Test failed: Cannot find user with UID");
+            } else if (loginPage.isElementPresent(loginPage.maxOtpAttempts)) {
+                scenario.log("Test failed: Maximum OTP attempts exceeded. Number locked for 24 hours.");
+            } else {
+                scenario.log("Test failed: Proceed button was not clickable");
+            }
+        } else {
+            scenario.log("Proceed operation completed successfully.");
+        }
+        Assert.assertTrue(isProceedSuccessful, "Proceed Failed: User may be blocked for 24 hours or invalid input was provided");
+    }
+
+    @Then("user enters the OTP")
+    public void user_enters_the_otp() {
+
+        String otp = configLoader.getProperty("login.staticOtp");
+        loginPage.enterOTP(otp);
+    }
+
+    @Then("user clicks on the Verify OTP button")
+    public void user_clicks_on_the_verify_otp_button() {
+
+        loginPage.clickOnTheVerifyOTPButton();
+    }
+
+    @Then("system should display the appropriate login status")
+    public void system_should_display_the_appropriate_login_status() {
+
+        Assert.assertTrue(loginPage.isUserLoggedIn(), "User Login Verification has Failed");
+    }
+
+    // LOGOUT
+    @Given("user clicks on the Logout button")
+    public void user_clicks_on_the_logout_button() {
+
+        loginPage.clickOnLogout();
+    }
+
+    @When("user clicks on the Yes button to confirm logout")
+    public void user_clicks_on_the_yes_button_to_confirm_logout() {
+
+        loginPage.clickOnYesButton();
+    }
+
+    @Then("validate that the user is logged out")
+    public void validate_that_the_user_is_logged_out() {
+
+        scenario.log("User has logged out successfully");
+    }
+
+    //Login with Email ID
+    @When("user enters the valid email ID")
+    public void user_enters_the_valid_email_id() {
+
+        String email = configLoader.getProperty("login.validEmail");
+        loginPage.enterUserID(email);
+        scenario.log("Entered the Email ID: " + email);
+    }
+    @Then("user enters the OTP for email")
+    public void user_enters_the_otp_for_email() {
+
+        scenario.log("OTP cannot be automated for email. Skipping OTP validation step");
+    }
+
+    //OTP Functionality
+    @When("user enters the mobile number")
+    public void user_enters_the_mobile_number() {
+
+        String mobile = configLoader.getProperty("login.invalidMobileShort");
+        loginPage.enterUserID(mobile);
+    }
+    @Then("user enters the invalid OTP")
+    public void user_enters_the_invalid_otp() {
+
+        String invalid_otp = configLoader.getProperty("login.invalidOtp");
+        loginPage.enterOTP(invalid_otp);
+    }
+    @Then("user clicks on the Verify OTP button for validation")
+    public void user_clicks_on_the_verify_otp_button_for_validation() {
+
+        boolean isVerified = loginPage.clickOnTheVerifyOTPButton();
+        if (isVerified) {
+            scenario.log("OTP validated successfully. Proceeding...");
+        } else {
+            if (loginPage.isElementPresent(loginPage.otpField)) {
+                scenario.log("Test failed: Invalid OTP entered or User not entered the OTP");
+            } else {
+                scenario.log("Exception while clicking Verify OTP or OTP validation failed");
+            }
+        }
+        Assert.assertFalse(isVerified, "OTP Verification Failed");
+    }
+    @Then("user clicks on the Resend OTP option")
+    public void user_clicks_on_the_resend_otp_option() {
+
+        loginPage.clickOnResendOTP();
+    }
+    @Then("user successfully resends the OTP")
+    public void user_successfully_resends_the_otp() {
+
+        scenario.log("OTP has successfully has resent");
+    }
+
+    //Invalid Mobile Number
+    @When("user enters the invalid mobile number")
+    public void user_enters_the_invalid_mobile_number() {
+
+        String mobile = configLoader.getProperty("login.invalidMobileLong");
+        loginPage.enterUserID(mobile);
+    }
+    @When("user clicks on the Proceed button to validate the invalid user ID")
+    public void user_clicks_on_the_proceed_button_to_validate_the_invalid_user_id() {
+
+        loginPage.clickOnTheProceedButton();
+    }
+    @Then("validate that the appropriate error message is displayed")
+    public void validate_that_the_appropriate_error_message_is_displayed() {
+
+        loginPage.validateErrorMessageByPartialText("Invalid phone number format", "Invalid phone number format");
+    }
+
+    //Invalid Email ID
+    @Given("user enters the invalid email ID")
+    public void user_enters_the_invalid_email_id() {
+
+        String email = configLoader.getProperty("login.invalidEmail");
+        loginPage.enterUserID(email);
+        scenario.log("Entered Email ID: " + email);
+    }
+
+    //Guest User
+    @When("user validates that a guest user is prompted to enter login credentials")
+    public void user_validates_that_a_guest_user_is_prompted_to_enter_login_credentials() {
+
+        loginPage.validateErrorMessageByPartialText("Sign in to Shoppers Stop", "Sign in to Shoppers Stop");
+    }
+}

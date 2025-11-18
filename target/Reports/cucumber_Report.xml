@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="Cucumber" time="151.187" tests="2" skipped="0" failures="1" errors="0">
+<testcase classname="User Login Functionality with Valid and Invalid Data" name="Verify the sign-in functionality via phone number for an existing user" time="56.902">
+<system-out><![CDATA[
+Given user launches the application.........................................passed
+And user clicks on the Account option in the footer.........................passed
+When user taps on the Login button..........................................passed
+And user enters the valid mobile number.....................................passed
+And user clicks on the Proceed button.......................................passed
+Then user enters the OTP....................................................passed
+And user clicks on the Verify OTP button....................................passed
+Then system should display the appropriate login status.....................passed
+]]></system-out>
+</testcase>
+<testcase classname="User Login Functionality with Valid and Invalid Data" name="Verify the logout functionality" time="84.811">
+<failure type="java.lang.RuntimeException" message="Could not click element: By.xpath: //p[contains(text(), 'YES,LOG OUT')]">
+<![CDATA[java.lang.RuntimeException: Could not click element: By.xpath: //p[contains(text(), 'YES,LOG OUT')]
+	at pages.LoginPage.stableClick(LoginPage.java:134)
+	at pages.LoginPage.clickOnYesButton(LoginPage.java:137)
+	at scenarios.stepDefinitions.LoginStep.user_clicks_on_the_yes_button_to_confirm_logout(LoginStep.java:111)
+	at ✽.user clicks on the Yes button to confirm logout(file:///Volumes/Macintosh%20HD%20-%20Data/SS-Sanity/SS_Automation_Msite_Sanity/src/test/java/scenarios/features/login.feature:18)
+]]>
+</failure>
+<system-out><![CDATA[
+When user clicks on the Logout button.......................................passed
+And user clicks on the Yes button to confirm logout.........................failed
+Then validate that the user is logged out...................................skipped
+]]></system-out>
+</testcase>
+</testsuite>
