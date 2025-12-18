@@ -1,128 +1,70 @@
+@account
 Feature: Verify the Account Module in the Application
 
-  @smoke @sanity @TC002
-  Scenario: Verify the sign-in functionality via phone number for an existing user
+ @smoke @sanity
+    Scenario: Verify the Login Functionality for existing number
     Given user launches the application
-    And user clicks on the Account option in the footer
-    When user taps on the Login button
+    And user clicks on the Account in the footer
+    When user clicks the Login button
     And user enters the valid mobile number
-    And user clicks on the Proceed button
+    And user clicks the Continue button
     Then user enters the OTP
-    And user clicks on the Verify OTP button
+    And user validates otp result
     Then system should display the appropriate login status
 
-  @smoke @sanity @TC045
+  @smoke @sanity
   Scenario: Verify components of Account
-    When system should display the following components in the Account section
-      | My Profile              |
-      | My Orders               |
-      | My Wallet               |
-      | Gift Card/EGV           |
-      | First Citizen Club      |
-      | Stores And Events       |
-      | Book a Personal Shopper |
-      | Logout                  |
+    Then system should display the following components in the Account section
+      | Profile            |
+      | Manage Addresses   |
+      | Saved Payments     |
+      | Help & Support     |
+      | About Us           |
+      | Terms Of Use       |
+      | Privacy Policy     |
 
-  @sanity @TC031 @TC046
-  Scenario: Verify CRUD on the Address page
-    Given user navigates back to the Home Page
-    And user is on the Home Page
-    When user clicks on My Profile option
-    And user updates personal details
-    And user updates name
-    And user updates gender details
-    And user clicks on Update Changes
-    And user validates that personal details are updated successfully
-    And user adds a new address
-    And user enters new name
-    And user enters new number
-    And user enters new pin code
-    And user enters new address
-    And user selects address type as Work
-    And user clicks on Add Address
-    And user validates that new address is added successfully
-    Then user updates an existing address
-    And user updates name
-    And user updates number
-    And user updates pin code
-    And user updates address
-    And user clicks on Update Changes
-    And validate that existing address is updated
-    And user deletes existing address
-    And user clicks on Confirm button to delete address
-    And user validates that delete confirmation message is displayed
+  @smoke @sanity
+  Scenario: Verify the Access Quick Actions
+    Given system should display the quick actions options in the account section
+      | Wishlist   |
+      | My Orders  |
+      | Wallet     |
 
-  @sanity @TC051
-  Scenario: Verify Book an Appointment functionality
-    Given user navigates back to the Home Page
-    And user is on the Home Page
-    Given user clicks on Book a Personal Shopper
-    When user clicks on Book an Appointment
-    And user selects city
-    And user selects store
-    And user validates that Get Store Directions option is displayed
-    And user selects date
-    And user clicks on Select Time
-    Then user clicks on Book a Service button
-    And user validates personal details
-    And user clicks on Proceed to Book button
-    And user validates that booking confirmation is displayed
-
-  @sanity @TC041 @TC047
-  Scenario: Verify navigation and functionality of My Orders
-    Given user navigates back to the Home Page
-    And user is on the Home Page
-    Given user clicks on My Orders
-    When user views existing orders
-    And user applies filter option
-    And user applies filter Past 30 Days
-    And user views filtered orders accordingly
-    And user applies filter option
-    And user applies filter Past 6 Months
-    And user views filtered orders accordingly
-    And user applies filter option
-    And user applies filter Completed
-    Then user views filtered orders accordingly
-    And user applies filter option
-    And user applies filter Cancelled
-    And user views filtered orders accordingly
-    And user applies filter option
-    And user applies filter Past 1 Year
-    And user clicks on an existing order to view details
-    Then user validates order details successfully
-
-  @smoke @sanity @TC048
-  Scenario: Verify navigation and functionality of My Wallet
-    Given user navigates back to the Home Page
-    And user is on the Home Page
-    When user clicks on My Wallet
-    And user validates wallet account details
-
-  @smoke @sanity @TC052
+  @smoke @sanity
   Scenario: Verify components of FCC page
-    Given user navigates back to the Home Page
-    And user is on the Home Page
-    When user clicks on First Citizen Club
-    And system should display the following components in the FCC section
-      | Silver Edge                   |
-      | Golden Glow                   |
-      | Platinum Aura                 |
-      | Black Tier                    |
-      | Membership Details & Benefits |
-    Then user clicks on Card
-    And user validates card details
+    When system should display the following components in the FCC section
+      | First Connect |
+      | Silver Edge   |
+      | Golden Glow   |
+      | Platinum Aura |
+      | Black Card    |
 
-  @smoke @sanity @TC049
-  Scenario: Verify navigation and functionality of GC/EGV
-    Given user navigates back to the Home Page
-    And user is on the Home Page
-    When user clicks on My Gift Card or EGV
-    And user validates gift voucher product list
-
-  @smoke @sanity @TC055
-  Scenario: Verify the logout functionality
-    Given user navigates back to the Home Page
-    And user is on the Home Page
-    When user clicks on the Logout button
-    And user clicks on the Yes button to confirm logout
-    Then validate that the user is logged out
+  @sanity
+  Scenario: Verify CRUD on the Address page
+    And user clicks on the my Profile option
+    And user update their first name
+    And user update their last name
+    And user update their gender details
+    And user clicks on the update changes
+    And user validate that personal details successfully updated
+    And user clicks on the manage addresses
+    And user is able to add a new address
+    And user enters the new first name
+    And user enters the new last name
+    And user enters the new number
+    And user enters the new pin code
+    And user enters the new address
+    And user selects a address type as work
+    And user clicks on the add address
+    And user validate that new address added successfully
+    And user updates an existing address
+    And user updates their first name
+    And user updates their last name
+    And user updates their number
+    And user updates their postal code
+    And user updates their address
+    And user clicks on the save changes
+    And Validate that existing address has updated
+    And user is able to delete exiting address
+    And user clicks on the confirm remove button for delete address
+    And user validate that delete address message is displayed

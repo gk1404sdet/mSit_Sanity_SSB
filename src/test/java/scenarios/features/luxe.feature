@@ -1,28 +1,17 @@
-#@luxe
-#Feature: Verify the Luxe Modules in the Mobile Application
-#
-#  Background:
-#
-#  Scenario Outline: Login as a user with a valid mobile number
-#
-#    When User clicks on the Account option in the footer
-#    And User clicks the Login button
-#    And User enters the mobile number "<mobile no>"
-#    And User clicks the Proceed button
-#    Then User enters the OTP
-#    And User clicks on the Verify OTP button
-#    And User validate that the user has successfully logged in
-#
-#    Examples:
-#
-#      | mobile no  |
-#      | 8883371696 |
-##      | 9629318961 |
-##      | 9606253725 |
-##      | 9632653387 |
-##      | 9790153971 |
-#
-#  Scenario: Verify the Luxe Functionality
+@luxe
+Feature: Verify the Luxe Modules in the Mobile Application
+
+  #  Background:
+#    Given user launches the application
+#    And user taps on the Account in the footer
+#    When user clicks the Login button
+#    And user enters the valid mobile number
+#    And user clicks the Continue button
+#    Then user enters the OTP
+#    And user validates otp result
+#    Then system should display the appropriate login status
+
+#  Scenario: TES21-Verify the Luxe Functionality
 #
 #    Given User is on the luxepage
 #    When User clicks on a banner from the luxe
@@ -35,8 +24,7 @@
 #    And User validate that navigation
 #    And User return to the luxe page
 #    And User return to main page
-#
-#
+##
 #  Scenario: Logout functionality for a logged-in user
 #
 #    When User clicks on the Account option in the footer

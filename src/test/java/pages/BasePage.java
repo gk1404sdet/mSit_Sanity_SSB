@@ -1,13 +1,11 @@
 package pages;
 
-
-import io.appium.java_client.AppiumBy;
 import io.appium.java_client.AppiumDriver;
 import io.appium.java_client.PerformsTouchActions;
 import io.appium.java_client.TouchAction;
 import io.appium.java_client.touch.WaitOptions;
 import io.appium.java_client.touch.offset.PointOption;
-import org.apache.commons.io.FileUtils;
+import org.codehaus.groovy.classgen.asm.BinaryIntExpressionHelper;
 import org.openqa.selenium.*;
 import org.openqa.selenium.interactions.PointerInput;
 import org.openqa.selenium.interactions.Sequence;
@@ -15,24 +13,21 @@ import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.Assert;
 
-import java.io.File;
-import java.io.IOException;
 import java.text.SimpleDateFormat;
 import java.time.Duration;
 import java.util.*;
 import java.util.NoSuchElementException;
 
 public class BasePage {
-    protected AppiumDriver driver;
-    protected WebDriverWait wait;
+    protected static AppiumDriver driver;
+    protected static WebDriverWait wait;
 
     public BasePage(AppiumDriver driver) {
         this.driver = driver;
         wait = new WebDriverWait(driver, Duration.ofSeconds(20));
     }
 
-
-    public void waitForVisibility(WebElement element) {
+    public static void waitForVisibility(WebElement element) {
         wait.until(ExpectedConditions.visibilityOf(element));
     }
 
@@ -79,12 +74,29 @@ public class BasePage {
         element.sendKeys(txt);
     }
 
+    public void clickOnElement(By element, int... param) {
+        isElementDisplayed(element);
+        if (param.length == 1) {
+            WebElement elementForClick = driver.findElements(element).get(param[0]);
+            wait.until(ExpectedConditions.visibilityOf(elementForClick));
+            int max=2;
+            for (int i = 0; i < max; i++) {
+                elementForClick.click();
+                i++;
+            }
+
+        } else {
+            wait.until(ExpectedConditions.visibilityOfElementLocated(element));
+            driver.findElement(element).click();
+        }
+    }
+
     public void click(By element) {
         waitForVisibility(element);
         driver.findElement(element).click();
     }
 
-    public void click(WebElement element) {
+    public static void click(WebElement element) {
         waitForVisibility(element);
         element.click();
     }
@@ -112,11 +124,6 @@ public class BasePage {
             System.err.println("swipeScreen(): TouchAction FAILED\n" + e.getMessage());
             return;
         }
-    }
-
-    public void clickOnTextButton(String button) {
-        wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//*[contains(text(),'" + button + "')]")));
-        click(By.xpath("//*[contains(text(),'" + button + "')]"));
     }
 
     public void swipeScreen(Direction dir) {
@@ -223,7 +230,11 @@ public class BasePage {
         return date;
     }
 
-    public String getInputFieldText(WebElement inputField) {
+    public boolean isElementPresentWithText(String elementText) {
+        return isElementDisplayed(By.xpath("//*[contains(@text,'" + elementText + "')]"));
+    }
+
+    public static String getInputFieldText(WebElement inputField) {
         try {
             if (inputField != null) {
                 String text = inputField.getAttribute("text");
@@ -311,56 +322,48 @@ public class BasePage {
 
         driver.perform(Arrays.asList(swipe));
     }
-
-    public void captureScreenshot(String screenshotName) throws IOException {
-        if (driver instanceof TakesScreenshot) {
-
-            File sourcePath = ((TakesScreenshot) driver).getScreenshotAs(OutputType.FILE);
-
-            String timestamp = new SimpleDateFormat("yyyy-MM-dd_HH-mm-ss").format(new Date());
-            String fileName = screenshotName + "_" + timestamp + ".png";
-
-            File destinationPath = new File("src/test/resources/ScreenShot/" + fileName);
-            FileUtils.copyFile(sourcePath, destinationPath);
-
-            System.out.println("Screenshot saved at: " + destinationPath.getAbsolutePath());
-        }
-    }
-
-    public void adjustQuantity(int times, boolean increaseChoice) throws InterruptedException {
-        String increaseQuantity = "new UiSelector().className(\"android.widget.ImageView\").instance(5)";
-        String decreaseQuantity = "new UiSelector().className(\"android.widget.ImageView\").instance(4)";
-
-        WebElement increase = driver.findElement(AppiumBy.androidUIAutomator(increaseQuantity));
-        WebElement decrease = driver.findElement(AppiumBy.androidUIAutomator(decreaseQuantity));
-
-        for (int i = 0; i < times; i++) {
-            if (increaseChoice) {
-                // If the user chooses to increase
-                Thread.sleep(1000);
-                increase.click();
-                System.out.println("Quantity Increased");
-            } else {
-                // If the user chooses to decrease
-                Thread.sleep(1000);
-                decrease.click();
-                System.out.println("Quantity Decreased");
-            }
-        }
-    }
-
     public void clickElementWithScroll(By element) {
-        boolean found = false;
-        while (!found) {
+        int maxScrollAttempts = 5;
+        int attempt = 0;
+        boolean clicked = false;
+
+        while (attempt < maxScrollAttempts) {
             try {
-                click(element);// Attempt to click the element
-                found = true;    // If successful, set found to true
+                clickOnElement(element);
+                clicked = true;
+                break;
             } catch (Exception e) {
-                // Scroll down and continue searching if element is not found
                 scroll("DOWN");
+                attempt++;
+                try {
+                    Thread.sleep(500);
+                } catch (InterruptedException ignored) {}
             }
         }
+        if (!clicked) {}
     }
+
+//    public void clickElementWithScroll(WebElement element) {
+//        int maxScrollAttempts = 5;
+//        int attempt = 0;
+//        boolean clicked = false;
+//
+//        while (attempt < maxScrollAttempts) {
+//            try {
+//                element.click();
+//                clicked = true;
+//                break;
+//            } catch (Exception e) {
+//                scroll("DOWN");
+//                attempt++;
+//                try {
+//                    Thread.sleep(500);
+//                } catch (InterruptedException ignored) {}
+//            }
+//        }
+//        if (!clicked) {}
+//    }
+
 
     public void tapElement(WebElement element) {
 
@@ -381,33 +384,13 @@ public class BasePage {
         driver.perform(Collections.singletonList(tap));
     }
 
-    public boolean isElementPresent(By locatorKey) {
-        driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(2));
-        try {
-            driver.findElement(locatorKey);
-            driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(20));
-            return true;
-        } catch (org.openqa.selenium.NoSuchElementException e) {
-            driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(20));
-            return false;
+    public String getDisplayedText(WebElement element) {
+        String text = element.getAttribute("content-desc");
+        if (text == null || text.isEmpty()) {
+            text = element.getText();
         }
+        return text;
     }
-    public void waitForOverlayToDisappear() {
-        try {
-            List<By> overlays = Arrays.asList(
-                    By.cssSelector("div.bg-transparent"),
-                    By.cssSelector("div.flex.gap-3.bg-neutral-100.p-4"),
-                    By.cssSelector("div[role='dialog']"),
-                    By.cssSelector(".loader, .loading, .spinner")
-            );
-
-            for (By overlay : overlays) {
-                wait.until(ExpectedConditions.invisibilityOfElementLocated(overlay));
-            }
-        } catch (Exception ignored) {
-        }
-    }
-
 
     public void validateErrorMessageByPartialText(String partialText, String expectedText) {
         try {
@@ -415,19 +398,99 @@ public class BasePage {
             WebElement errorElement = wait.until(ExpectedConditions.visibilityOfElementLocated(errorLocator));
             String actualText = errorElement.getText().trim();
 
-            System.out.println("Actual: " + actualText);
             Assert.assertEquals(actualText, expectedText, "Toast message mismatch!");
-            System.out.println("Toasted Message is Matched: " + expectedText);
         } catch (Exception e) {
             Assert.fail("Failed to validate error message for partial text: '" + partialText + "' - " + e.getMessage());
         }
     }
 
-    public void clickJsUsingBy(By loc) {
-        JavascriptExecutor executor = (JavascriptExecutor) driver;
-        executor.executeScript("arguments[0].scrollIntoView({block: 'center', inline: 'nearest'});", driver.findElement(loc));
-        driver.findElement(loc).click();
+    public void safeClick(By b) {
+        JavascriptExecutor js = (JavascriptExecutor) driver;
+        try {
+            // Use BasePage click which already does waits
+            clickOnElement(b);
+        } catch (Exception e) {
+            // fallback to JS click if normal click fails
+            WebElement el = retryGetElement(b);
+            js.executeScript("arguments[0].scrollIntoView({block:'center'});", el);
+            js.executeScript("arguments[0].click();", el);
+        }
     }
 
+    public void safeClick(WebElement element) {
+        JavascriptExecutor js = (JavascriptExecutor) driver;
+        try {
+            element.click();
+        } catch (Exception e) {
+            js.executeScript("arguments[0].scrollIntoView({block:'center'});", element);
+            js.executeScript("arguments[0].click();", element);
+        }
+    }
+
+    public WebElement retryGetElement(By locators) {
+        try {
+            return driver.findElement(locators);
+        } catch (StaleElementReferenceException se) {
+            // single retry
+            wait.withTimeout(Duration.ofSeconds(2));
+            try {
+                return driver.findElement(locators);
+            } finally {
+                wait.withTimeout(Duration.ofSeconds(30));
+            }
+        }
+    }
+
+    public WebElement find(By locator) {
+        return driver.findElement(locator);
+    }
+
+    public List<WebElement> findAll(By locator) {
+        return driver.findElements(locator);
+    }
+
+
+    public String textOf(WebElement element) {
+        try {
+            return element.getText().trim();
+        } catch (Exception e) {
+            return "";
+        }
+    }
+
+    public void switchToNewWindow() {
+
+        String parentWindow = driver.getWindowHandle();
+        Set<String> allWindows = driver.getWindowHandles();
+
+        for (String window : allWindows) {
+            if (!window.equals(parentWindow)) {
+                driver.switchTo().window(window);
+                break;
+            }
+        }
+    }
+
+    public void closeParentWindowAndSwitchToChild() {
+
+        String parentWindow = driver.getWindowHandle();
+        Set<String> allWindows = driver.getWindowHandles();
+
+        if (allWindows.size() <= 1) {
+            throw new RuntimeException("Child window not opened");
+        }
+
+        String childWindow = allWindows.stream()
+                .filter(handle -> !handle.equals(parentWindow))
+                .findFirst()
+                .orElseThrow(() -> new RuntimeException("Child window not found"));
+
+        driver.switchTo().window(childWindow);
+
+        driver.switchTo().window(parentWindow);
+        driver.close();
+
+        driver.switchTo().window(childWindow);
+    }
 
 }

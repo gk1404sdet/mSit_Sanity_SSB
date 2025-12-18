@@ -74,7 +74,7 @@ $(document).ready(function() {
   <tbody>
     <tr class="info">
       <td>Shoppers Stop - mSite Sanity</td>
-      <td>17 Nov 2025, 11:47</td>
+      <td>20 Nov 2025, 18:41</td>
     </tr>
   </tbody>
 </table>
@@ -138,7 +138,7 @@ $(document).ready(function() {
           <td  class="failed"    >1</td>
           <td class="total">1</td>
 
-          <td class="duration" data-value="1056727000">1.056</td>
+          <td class="duration" data-value="20417855000">20.417</td>
           <td class="failed">Failed</td>
         </tr>
         </tbody>
@@ -184,7 +184,7 @@ $(document).ready(function() {
 </div>
 
 
-  <span class="lead-duration duration">1.056</span>
+  <span class="lead-duration duration">20.417</span>
 
 
   <span data-toggle="collapse" class=" collapsable-control" data-target="#element-1">
@@ -259,7 +259,7 @@ $(document).ready(function() {
   <span class="keyword indention">Given</span>
   <span class="name">user launches the application</span>
 
-  <span class="lead-duration duration">1.024</span>
+  <span class="lead-duration duration">0.380</span>
 
 </div>
 
@@ -298,7 +298,7 @@ $(document).ready(function() {
   <span class="keyword indention">And</span>
   <span class="name">user clicks on the Account option in the footer</span>
 
-  <span class="lead-duration duration">0.030</span>
+  <span class="lead-duration duration">20.035</span>
 
 </div>
 
@@ -310,32 +310,17 @@ $(document).ready(function() {
   <div class="inner-level">
     <div class="message indention">
       <div data-toggle="collapse" class=" collapsable-control" data-target="#msg-5">
-          <a>org.openqa.selenium.NoSuchSessionException:</a>
+          <a>org.openqa.selenium.TimeoutException:</a>
       </div>
       <div id="msg-5" class="collapse collapsable-details  in ">
-        <pre>org.openqa.selenium.NoSuchSessionException: invalid session id
+        <pre>org.openqa.selenium.TimeoutException: Expected condition failed: waiting for visibility of element located by By.xpath: //div[contains(text(), 'ACCOUNT')] (tried for 20 second(s) with 500 milliseconds interval)
 Build info: version: '4.27.0', revision: 'd6e718d134'
 System info: os.name: 'Mac OS X', os.arch: 'x86_64', os.version: '26.1', java.version: '21.0.8'
 Driver info: io.appium.java_client.AppiumDriver
-Command: [0182b3a0-701e-4a58-909b-fd714d097ff7, findElement {value=//div[contains(text(), 'ACCOUNT')], using=xpath}]
 Capabilities {appium:automationName: UiAutomator2, appium:chromedriverAutodownload: true, appium:chromedriverExecutable: /Users/apple/Downloads/chro..., appium:chromedriverUseSystemExecutable: false, appium:databaseEnabled: false, appium:desired: {appActivity: com.android.chrome/com.goog..., appPackage: com.android.chrome, automationName: UiAutomator2, browserName: Chrome, chromedriverAutodownload: true, chromedriverExecutable: /Users/apple/Downloads/chro..., chromedriverUseSystemExecutable: false, deviceName: 14081JEC202036, ensureWebviewsHavePages: true, forceAppLaunch: true, noReset: true, platformName: ANDROID}, appium:deviceApiLevel: 33, appium:deviceManufacturer: Google, appium:deviceModel: Pixel 4a, appium:deviceName: 14081JEC202036, appium:deviceScreenDensity: 440, appium:deviceScreenSize: 1080x2340, appium:deviceUDID: 14081JEC202036, appium:ensureWebviewsHavePages: true, appium:forceAppLaunch: true, appium:javascriptEnabled: true, appium:locationContextEnabled: false, appium:networkConnectionEnabled: true, appium:noReset: true, appium:pixelRatio: 2.75, appium:platformVersion: 13, appium:statBarHeight: 136, appium:takesScreenshot: true, appium:viewportRect: {height: 2204, left: 0, top: 136, width: 1080}, appium:warnings: {}, appium:webStorageEnabled: false, browserName: Chrome, platformName: ANDROID}
-Session ID: 0182b3a0-701e-4a58-909b-fd714d097ff7
-	at java.base/jdk.internal.reflect.DirectConstructorHandleAccessor.newInstance(DirectConstructorHandleAccessor.java:62)
-	at java.base/java.lang.reflect.Constructor.newInstanceWithCaller(Constructor.java:502)
-	at java.base/java.lang.reflect.Constructor.newInstance(Constructor.java:486)
-	at org.openqa.selenium.remote.ErrorCodec.decode(ErrorCodec.java:167)
-	at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:138)
-	at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:50)
-	at org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:190)
-	at io.appium.java_client.remote.AppiumCommandExecutor.execute(AppiumCommandExecutor.java:237)
-	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:545)
-	at org.openqa.selenium.remote.ElementLocation$ElementFinder$2.findElement(ElementLocation.java:165)
-	at org.openqa.selenium.remote.ElementLocation.findElement(ElementLocation.java:59)
-	at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:368)
-	at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:362)
-	at org.openqa.selenium.support.ui.ExpectedConditions$7.apply(ExpectedConditions.java:194)
-	at org.openqa.selenium.support.ui.ExpectedConditions$7.apply(ExpectedConditions.java:190)
-	at org.openqa.selenium.support.ui.FluentWait.until(FluentWait.java:203)
+Session ID: 877659b6-0f3e-472a-895f-a8dd2a43dc44
+	at org.openqa.selenium.support.ui.WebDriverWait.timeoutException(WebDriverWait.java:84)
+	at org.openqa.selenium.support.ui.FluentWait.until(FluentWait.java:228)
 	at pages.BasePage.waitForVisibility(BasePage.java:44)
 	at pages.BasePage.click(BasePage.java:83)
 	at pages.AccountPage.clickOnAccount(AccountPage.java:96)
@@ -472,9 +457,9 @@ Session ID: 0182b3a0-701e-4a58-909b-fd714d097ff7
 
 
   <div class="inner-level hooks-element-after">
-    <div data-toggle="collapse" class=" collapsable-control" data-target="#after-6">
+    <div data-toggle="collapse" class=" collapsed  collapsable-control" data-target="#after-6">
 
-<div class="brief failed">
+<div class="brief passed">
   <span class="keyword indention">Hooks</span>
   <span class="name"></span>
 
@@ -484,53 +469,36 @@ Session ID: 0182b3a0-701e-4a58-909b-fd714d097ff7
 
     </div>
 
-    <div id="after-6" class="inner-level collapse collapsable-details  in ">
+    <div id="after-6" class="inner-level collapse collapsable-details ">
         <div class="hook">
-          <div class="brief failed">
+          <div class="brief passed">
             <span class="keyword indention">After</span>
               <span class="location name">hooks.Hooks.tearDown(io.cucumber.java.Scenario)</span>
 
-  <span class="lead-duration duration">0.006</span>
+  <span class="lead-duration duration">0.403</span>
 
           </div>
 
 
 
-  <div class="inner-level">
-    <div class="message indention">
-      <div data-toggle="collapse" class=" collapsable-control" data-target="#msg-7">
-          <a>Error message</a>
-      </div>
-      <div id="msg-7" class="collapse collapsable-details  in ">
-        <pre>org.openqa.selenium.NoSuchSessionException: invalid session id
-Build info: version: '4.27.0', revision: 'd6e718d134'
-System info: os.name: 'Mac OS X', os.arch: 'x86_64', os.version: '26.1', java.version: '21.0.8'
-Driver info: io.appium.java_client.AppiumDriver
-Command: [0182b3a0-701e-4a58-909b-fd714d097ff7, screenshot {}]
-Capabilities {appium:automationName: UiAutomator2, appium:chromedriverAutodownload: true, appium:chromedriverExecutable: /Users/apple/Downloads/chro..., appium:chromedriverUseSystemExecutable: false, appium:databaseEnabled: false, appium:desired: {appActivity: com.android.chrome/com.goog..., appPackage: com.android.chrome, automationName: UiAutomator2, browserName: Chrome, chromedriverAutodownload: true, chromedriverExecutable: /Users/apple/Downloads/chro..., chromedriverUseSystemExecutable: false, deviceName: 14081JEC202036, ensureWebviewsHavePages: true, forceAppLaunch: true, noReset: true, platformName: ANDROID}, appium:deviceApiLevel: 33, appium:deviceManufacturer: Google, appium:deviceModel: Pixel 4a, appium:deviceName: 14081JEC202036, appium:deviceScreenDensity: 440, appium:deviceScreenSize: 1080x2340, appium:deviceUDID: 14081JEC202036, appium:ensureWebviewsHavePages: true, appium:forceAppLaunch: true, appium:javascriptEnabled: true, appium:locationContextEnabled: false, appium:networkConnectionEnabled: true, appium:noReset: true, appium:pixelRatio: 2.75, appium:platformVersion: 13, appium:statBarHeight: 136, appium:takesScreenshot: true, appium:viewportRect: {height: 2204, left: 0, top: 136, width: 1080}, appium:warnings: {}, appium:webStorageEnabled: false, browserName: Chrome, platformName: ANDROID}
-Session ID: 0182b3a0-701e-4a58-909b-fd714d097ff7
-	at java.base/jdk.internal.reflect.DirectConstructorHandleAccessor.newInstance(DirectConstructorHandleAccessor.java:62)
-	at java.base/java.lang.reflect.Constructor.newInstanceWithCaller(Constructor.java:502)
-	at java.base/java.lang.reflect.Constructor.newInstance(Constructor.java:486)
-	at org.openqa.selenium.remote.ErrorCodec.decode(ErrorCodec.java:167)
-	at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:138)
-	at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:50)
-	at org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:190)
-	at io.appium.java_client.remote.AppiumCommandExecutor.execute(AppiumCommandExecutor.java:237)
-	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:545)
-	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:618)
-	at io.appium.java_client.AppiumDriver.execute(AppiumDriver.java:310)
-	at org.openqa.selenium.remote.RemoteWebDriver.getScreenshotAs(RemoteWebDriver.java:334)
-	at io.appium.java_client.AppiumDriver.getScreenshotAs(AppiumDriver.java:319)
-	at hooks.Hooks.tearDown(Hooks.java:49)
-</pre>
+
+
+
+  <div class="embeddings inner-level">
+  <div class="embedding indention">
+    <div data-toggle="collapse" data-target="#embedding-7" class="collapsable-control">
+      <a>image</a>
+      <a href="embeddings/embedding_-2146582361.png" download target="_blank">
+        <span class="download-button glyphicon glyphicon-download-alt"></span>
+      </a>
+    </div>
+    <div id="embedding-7" class="collapse collapsable-details ">
+      <div class="embedding-content">
+        <img src="embeddings/embedding_-2146582361.png">
       </div>
     </div>
   </div>
-
-
-
-
+  </div>
 
         </div>
     </div>

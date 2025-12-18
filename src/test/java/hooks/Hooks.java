@@ -51,10 +51,8 @@ public class Hooks {
             scenario.attach(fileContent, "image/png", "image");
         }
         String scenarioName = scenario.getName();
-        if (scenarioName.contains("Verify the Sign-in functionality via Email ID for existing user") ||
-                scenarioName.contains("Verify the OTP functionality with an invalid OTP") ||
-                scenarioName.contains("Login as a user with an invalid mobile number") ||
-                scenarioName.contains("Login as a user with an invalid email id")) {
+        if (scenarioName.contains("Verify the OTP functionality with an invalid OTP") ||
+                scenarioName.contains("Login as a user with an invalid mobile number")) {
 
             restartApplication();
         }
@@ -70,7 +68,7 @@ public class Hooks {
 
         capabilities.setCapability("platformName", "Android");
         capabilities.setCapability("appium:automationName", "UiAutomator2");
-        capabilities.setCapability("appium:deviceName", System.getProperty("deviceName", "14081JEC202036"));
+//        capabilities.setCapability("appium:deviceName", System.getProperty("deviceName", "14081JEC202036"));
         capabilities.setCapability("appium:noReset", true);
         capabilities.setCapability("appium:forceAppLaunch", true);
         capabilities.setCapability("appium:browserName", "Chrome");
@@ -84,7 +82,10 @@ public class Hooks {
         driver = new AppiumDriver(new URL("http://localhost:4723"), capabilities);
         System.out.println("Driver initialization completed ******************");
 
-        String url = System.getProperty("msiteUrl", "https://www.shoppersstop.com/");
+        //Prod
+        String url = System.getProperty("msiteUrl", "https://www.ssbeauty.in/");
+        //UAT
+//        String url = System.getProperty("msiteUrl", "https://maya-uat.ssecom.tech/");
 
         driver.get(url);
     }

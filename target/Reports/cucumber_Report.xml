@@ -1,30 +1,1612 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuite name="Cucumber" time="151.187" tests="2" skipped="0" failures="1" errors="0">
-<testcase classname="User Login Functionality with Valid and Invalid Data" name="Verify the sign-in functionality via phone number for an existing user" time="56.902">
+<testsuite name="Cucumber" time="782.269" tests="27" skipped="0" failures="18" errors="0">
+<testcase classname="Verify the Account Module in the Application" name="Verify the Login Functionality for existing number" time="86.866">
 <system-out><![CDATA[
 Given user launches the application.........................................passed
-And user clicks on the Account option in the footer.........................passed
-When user taps on the Login button..........................................passed
+And user clicks on the Account in the footer................................passed
+When user clicks the Login button...........................................passed
 And user enters the valid mobile number.....................................passed
-And user clicks on the Proceed button.......................................passed
+And user clicks the Continue button.........................................passed
 Then user enters the OTP....................................................passed
-And user clicks on the Verify OTP button....................................passed
+And user validates otp result...............................................passed
 Then system should display the appropriate login status.....................passed
 ]]></system-out>
 </testcase>
-<testcase classname="User Login Functionality with Valid and Invalid Data" name="Verify the logout functionality" time="84.811">
-<failure type="java.lang.RuntimeException" message="Could not click element: By.xpath: //p[contains(text(), 'YES,LOG OUT')]">
-<![CDATA[java.lang.RuntimeException: Could not click element: By.xpath: //p[contains(text(), 'YES,LOG OUT')]
-	at pages.LoginPage.stableClick(LoginPage.java:134)
-	at pages.LoginPage.clickOnYesButton(LoginPage.java:137)
-	at scenarios.stepDefinitions.LoginStep.user_clicks_on_the_yes_button_to_confirm_logout(LoginStep.java:111)
-	at ✽.user clicks on the Yes button to confirm logout(file:///Volumes/Macintosh%20HD%20-%20Data/SS-Sanity/SS_Automation_Msite_Sanity/src/test/java/scenarios/features/login.feature:18)
+<testcase classname="Verify the Account Module in the Application" name="Verify components of Account" time="0.514">
+<system-out><![CDATA[
+Then system should display the following components in the Account section..passed
+]]></system-out>
+</testcase>
+<testcase classname="Verify the Account Module in the Application" name="Verify the Access Quick Actions" time="0.259">
+<system-out><![CDATA[
+Given system should display the quick actions options in the account section.passed
+]]></system-out>
+</testcase>
+<testcase classname="Verify the Account Module in the Application" name="Verify components of FCC page" time="0.288">
+<system-out><![CDATA[
+When system should display the following components in the FCC section......passed
+]]></system-out>
+</testcase>
+<testcase classname="Verify the Account Module in the Application" name="Verify CRUD on the Address page" time="27.198">
+<failure type="org.openqa.selenium.TimeoutException" message="Expected condition failed: waiting for visibility of element located by By.xpath: //input[@type='radio'] (tried for 20 second(s) with 500 milliseconds interval)
+Build info: version: '4.27.0', revision: 'd6e718d134'
+System info: os.name: 'Mac OS X', os.arch: 'x86_64', os.version: '26.1', java.version: '21.0.8'
+Driver info: io.appium.java_client.AppiumDriver
+Capabilities {appium:automationName: UiAutomator2, appium:chromedriverAutodownload: true, appium:chromedriverExecutable: /Users/apple/Downloads/chro..., appium:chromedriverUseSystemExecutable: false, appium:databaseEnabled: false, appium:desired: {appActivity: com.android.chrome/com.goog..., appPackage: com.android.chrome, automationName: UiAutomator2, browserName: Chrome, chromedriverAutodownload: true, chromedriverExecutable: /Users/apple/Downloads/chro..., chromedriverUseSystemExecutable: false, ensureWebviewsHavePages: true, forceAppLaunch: true, noReset: true, platformName: ANDROID}, appium:deviceApiLevel: 33, appium:deviceManufacturer: Google, appium:deviceModel: Pixel 4a, appium:deviceName: 14081JEC202036, appium:deviceScreenDensity: 440, appium:deviceScreenSize: 1080x2340, appium:deviceUDID: 14081JEC202036, appium:ensureWebviewsHavePages: true, appium:forceAppLaunch: true, appium:javascriptEnabled: true, appium:locationContextEnabled: false, appium:networkConnectionEnabled: true, appium:noReset: true, appium:pixelRatio: 2.75, appium:platformVersion: 13, appium:statBarHeight: 136, appium:takesScreenshot: true, appium:viewportRect: {height: 2204, left: 0, top: 136, width: 1080}, appium:warnings: {}, appium:webStorageEnabled: false, browserName: Chrome, platformName: ANDROID}
+Session ID: 4b151676-59cf-48fb-9cf8-3d6bafff8521">
+<![CDATA[org.openqa.selenium.TimeoutException: Expected condition failed: waiting for visibility of element located by By.xpath: //input[@type='radio'] (tried for 20 second(s) with 500 milliseconds interval)
+Build info: version: '4.27.0', revision: 'd6e718d134'
+System info: os.name: 'Mac OS X', os.arch: 'x86_64', os.version: '26.1', java.version: '21.0.8'
+Driver info: io.appium.java_client.AppiumDriver
+Capabilities {appium:automationName: UiAutomator2, appium:chromedriverAutodownload: true, appium:chromedriverExecutable: /Users/apple/Downloads/chro..., appium:chromedriverUseSystemExecutable: false, appium:databaseEnabled: false, appium:desired: {appActivity: com.android.chrome/com.goog..., appPackage: com.android.chrome, automationName: UiAutomator2, browserName: Chrome, chromedriverAutodownload: true, chromedriverExecutable: /Users/apple/Downloads/chro..., chromedriverUseSystemExecutable: false, ensureWebviewsHavePages: true, forceAppLaunch: true, noReset: true, platformName: ANDROID}, appium:deviceApiLevel: 33, appium:deviceManufacturer: Google, appium:deviceModel: Pixel 4a, appium:deviceName: 14081JEC202036, appium:deviceScreenDensity: 440, appium:deviceScreenSize: 1080x2340, appium:deviceUDID: 14081JEC202036, appium:ensureWebviewsHavePages: true, appium:forceAppLaunch: true, appium:javascriptEnabled: true, appium:locationContextEnabled: false, appium:networkConnectionEnabled: true, appium:noReset: true, appium:pixelRatio: 2.75, appium:platformVersion: 13, appium:statBarHeight: 136, appium:takesScreenshot: true, appium:viewportRect: {height: 2204, left: 0, top: 136, width: 1080}, appium:warnings: {}, appium:webStorageEnabled: false, browserName: Chrome, platformName: ANDROID}
+Session ID: 4b151676-59cf-48fb-9cf8-3d6bafff8521
+	at org.openqa.selenium.support.ui.WebDriverWait.timeoutException(WebDriverWait.java:84)
+	at org.openqa.selenium.support.ui.FluentWait.until(FluentWait.java:228)
+	at pages.BasePage.waitForVisibility(BasePage.java:39)
+	at pages.BasePage.click(BasePage.java:95)
+	at pages.AccountPage.clickOnGender(AccountPage.java:161)
+	at scenarios.stepDefinitions.AccountStep.user_update_their_gender_details(AccountStep.java:119)
+	at ✽.user update their gender details(file:///Volumes/Macintosh%20HD%20-%20Data/Code/SSB_Automation_Msite_Sanity/src/test/java/scenarios/features/account.feature:47)
 ]]>
 </failure>
 <system-out><![CDATA[
-When user clicks on the Logout button.......................................passed
-And user clicks on the Yes button to confirm logout.........................failed
+And user clicks on the my Profile option....................................passed
+And user update their first name............................................passed
+And user update their last name.............................................passed
+And user update their gender details........................................failed
+And user clicks on the update changes.......................................skipped
+And user validate that personal details successfully updated................skipped
+And user clicks on the manage addresses.....................................skipped
+And user is able to add a new address.......................................skipped
+And user enters the new first name..........................................skipped
+And user enters the new last name...........................................skipped
+And user enters the new number..............................................skipped
+And user enters the new pin code............................................skipped
+And user enters the new address.............................................skipped
+And user selects a address type as work.....................................skipped
+And user clicks on the add address..........................................skipped
+And user validate that new address added successfully.......................skipped
+And user updates an existing address........................................skipped
+And user updates their first name...........................................skipped
+And user updates their last name............................................skipped
+And user updates their number...............................................skipped
+And user updates their postal code..........................................skipped
+And user updates their address..............................................skipped
+And user clicks on the save changes.........................................skipped
+And Validate that existing address has updated..............................skipped
+And user is able to delete exiting address..................................skipped
+And user clicks on the confirm remove button for delete address.............skipped
+And user validate that delete address message is displayed..................skipped
+]]></system-out>
+</testcase>
+<testcase classname="Verify the Cart Page Functionality" name="Adding the Product to cart" time="32.154">
+<system-out><![CDATA[
+Given user back to home page................................................passed
+Given user is on the homepage...............................................passed
+When user selects a makeup category from home page..........................passed
+And user clicks the sub category from makeup page...........................passed
+And user selects a product from makeup plp..................................passed
+And User clicks on the add to bag...........................................passed
+And user back to parent window..............................................passed
+]]></system-out>
+</testcase>
+<testcase classname="Verify the Cart Page Functionality" name="Adding the Product to my bag" time="30.29">
+<system-out><![CDATA[
+When user back to home page.................................................passed
+And user clicks the sub category lips from makeup page......................passed
+And user selects a product from lips plp....................................passed
+And user selects a product from makeup plp..................................passed
+And User clicks on the add to bag...........................................passed
+And user back to parent window..............................................passed
+]]></system-out>
+</testcase>
+<testcase classname="Verify the Cart Page Functionality" name="Verify the components of the Bag" time="43.091">
+<system-out><![CDATA[
+When user back to home page.................................................passed
+When user clicks on the cart icon in the header.............................passed
+And user validate that cart is not empty....................................passed
+Then system should display the following components on the cart page........passed
+]]></system-out>
+</testcase>
+<testcase classname="Verify the Cart Page Functionality" name="Verify increase and decrease of product quantity" time="30.578">
+<system-out><![CDATA[
+And user validate that cart is not empty....................................passed
+And user increase the product quantity in the cart..........................passed
+And user decrease the product quantity in the cart..........................passed
+]]></system-out>
+</testcase>
+<testcase classname="Verify the Cart Page Functionality" name="Verify adding/removing product to bag from PDP and move to Wishlist" time="43.484">
+<system-out><![CDATA[
+And user validate that cart is not empty....................................passed
+And user clicks on the product x mark.......................................passed
+And user moves a product to the wishlist from the cart......................passed
+And user validate that product moved to wishlist............................passed
+And user validate that cart is not empty....................................passed
+Then user clicks on the product x mark......................................passed
+And user removes a product to the wishlist from the cart....................passed
+And user validate that product removed from cart............................passed
+]]></system-out>
+</testcase>
+<testcase classname="Checkout Process and Order Placement" name="Verify a successful payment" time="30.105">
+<failure type="org.openqa.selenium.ElementClickInterceptedException" message="element click intercepted: Element &lt;span class=&quot;MuiBadge-root css-1g48zis&quot;&gt;...&lt;/span&gt; is not clickable at point (364, 28). Other element would receive the click: &lt;div aria-hidden=&quot;true&quot; class=&quot;MuiBackdrop-root css-5wkaci&quot; style=&quot;opacity: 1; transition: opacity 225ms cubic-bezier(0.4, 0, 0.2, 1);&quot;&gt;...&lt;/div&gt;
+  (Session info: chrome=143.0.7499.110)
+Build info: version: '4.27.0', revision: 'd6e718d134'
+System info: os.name: 'Mac OS X', os.arch: 'x86_64', os.version: '26.1', java.version: '21.0.8'
+Driver info: io.appium.java_client.AppiumDriver
+Command: [4b151676-59cf-48fb-9cf8-3d6bafff8521, clickElement {id=f.B6662030AEB857456888C3A6C09972D3.d.A47ECD4D1C56C7B69D7ACB8EA453B7D3.e.351}]
+Capabilities {appium:automationName: UiAutomator2, appium:chromedriverAutodownload: true, appium:chromedriverExecutable: /Users/apple/Downloads/chro..., appium:chromedriverUseSystemExecutable: false, appium:databaseEnabled: false, appium:desired: {appActivity: com.android.chrome/com.goog..., appPackage: com.android.chrome, automationName: UiAutomator2, browserName: Chrome, chromedriverAutodownload: true, chromedriverExecutable: /Users/apple/Downloads/chro..., chromedriverUseSystemExecutable: false, ensureWebviewsHavePages: true, forceAppLaunch: true, noReset: true, platformName: ANDROID}, appium:deviceApiLevel: 33, appium:deviceManufacturer: Google, appium:deviceModel: Pixel 4a, appium:deviceName: 14081JEC202036, appium:deviceScreenDensity: 440, appium:deviceScreenSize: 1080x2340, appium:deviceUDID: 14081JEC202036, appium:ensureWebviewsHavePages: true, appium:forceAppLaunch: true, appium:javascriptEnabled: true, appium:locationContextEnabled: false, appium:networkConnectionEnabled: true, appium:noReset: true, appium:pixelRatio: 2.75, appium:platformVersion: 13, appium:statBarHeight: 136, appium:takesScreenshot: true, appium:viewportRect: {height: 2204, left: 0, top: 136, width: 1080}, appium:warnings: {}, appium:webStorageEnabled: false, browserName: Chrome, platformName: ANDROID}
+Element: [[AppiumDriver: Chrome on ANDROID (4b151676-59cf-48fb-9cf8-3d6bafff8521)] -&gt; xpath: //span[@class='MuiBadge-root css-1g48zis']]
+Session ID: 4b151676-59cf-48fb-9cf8-3d6bafff8521">
+<![CDATA[org.openqa.selenium.ElementClickInterceptedException: element click intercepted: Element <span class="MuiBadge-root css-1g48zis">...</span> is not clickable at point (364, 28). Other element would receive the click: <div aria-hidden="true" class="MuiBackdrop-root css-5wkaci" style="opacity: 1; transition: opacity 225ms cubic-bezier(0.4, 0, 0.2, 1);">...</div>
+  (Session info: chrome=143.0.7499.110)
+Build info: version: '4.27.0', revision: 'd6e718d134'
+System info: os.name: 'Mac OS X', os.arch: 'x86_64', os.version: '26.1', java.version: '21.0.8'
+Driver info: io.appium.java_client.AppiumDriver
+Command: [4b151676-59cf-48fb-9cf8-3d6bafff8521, clickElement {id=f.B6662030AEB857456888C3A6C09972D3.d.A47ECD4D1C56C7B69D7ACB8EA453B7D3.e.351}]
+Capabilities {appium:automationName: UiAutomator2, appium:chromedriverAutodownload: true, appium:chromedriverExecutable: /Users/apple/Downloads/chro..., appium:chromedriverUseSystemExecutable: false, appium:databaseEnabled: false, appium:desired: {appActivity: com.android.chrome/com.goog..., appPackage: com.android.chrome, automationName: UiAutomator2, browserName: Chrome, chromedriverAutodownload: true, chromedriverExecutable: /Users/apple/Downloads/chro..., chromedriverUseSystemExecutable: false, ensureWebviewsHavePages: true, forceAppLaunch: true, noReset: true, platformName: ANDROID}, appium:deviceApiLevel: 33, appium:deviceManufacturer: Google, appium:deviceModel: Pixel 4a, appium:deviceName: 14081JEC202036, appium:deviceScreenDensity: 440, appium:deviceScreenSize: 1080x2340, appium:deviceUDID: 14081JEC202036, appium:ensureWebviewsHavePages: true, appium:forceAppLaunch: true, appium:javascriptEnabled: true, appium:locationContextEnabled: false, appium:networkConnectionEnabled: true, appium:noReset: true, appium:pixelRatio: 2.75, appium:platformVersion: 13, appium:statBarHeight: 136, appium:takesScreenshot: true, appium:viewportRect: {height: 2204, left: 0, top: 136, width: 1080}, appium:warnings: {}, appium:webStorageEnabled: false, browserName: Chrome, platformName: ANDROID}
+Element: [[AppiumDriver: Chrome on ANDROID (4b151676-59cf-48fb-9cf8-3d6bafff8521)] -> xpath: //span[@class='MuiBadge-root css-1g48zis']]
+Session ID: 4b151676-59cf-48fb-9cf8-3d6bafff8521
+	at java.base/jdk.internal.reflect.DirectConstructorHandleAccessor.newInstance(DirectConstructorHandleAccessor.java:62)
+	at java.base/java.lang.reflect.Constructor.newInstanceWithCaller(Constructor.java:502)
+	at java.base/java.lang.reflect.Constructor.newInstance(Constructor.java:486)
+	at org.openqa.selenium.remote.ErrorCodec.decode(ErrorCodec.java:167)
+	at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:138)
+	at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:50)
+	at org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:190)
+	at io.appium.java_client.remote.AppiumCommandExecutor.execute(AppiumCommandExecutor.java:237)
+	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:545)
+	at org.openqa.selenium.remote.RemoteWebElement.execute(RemoteWebElement.java:223)
+	at org.openqa.selenium.remote.RemoteWebElement.click(RemoteWebElement.java:76)
+	at pages.BasePage.click(BasePage.java:96)
+	at pages.CartPage.clickOnCartIcon(CartPage.java:52)
+	at scenarios.stepDefinitions.CartPageStep.user_clicks_on_the_cart_icon_in_the_header(CartPageStep.java:62)
+	at ✽.user clicks on the cart icon in the header(file:///Volumes/Macintosh%20HD%20-%20Data/Code/SSB_Automation_Msite_Sanity/src/test/java/scenarios/features/checkout.feature:21)
+]]>
+</failure>
+<system-out><![CDATA[
+Given user back to home page................................................passed
+When user selects a makeup category from home page..........................passed
+And user clicks the sub category from makeup page...........................passed
+And user selects a product from makeup plp..................................passed
+And User clicks on the add to bag...........................................passed
+And user clicks on the cart icon in the header..............................failed
+And User clicks on the proceed to pay.......................................skipped
+Then User clicks on the continue to payment.................................skipped
+And user selecting cod option...............................................skipped
+And User clicks on the place order button...................................skipped
+And User validate that the order is placed successfully.....................skipped
+And User clicks on the continue shopping button.............................skipped
+]]></system-out>
+</testcase>
+<testcase classname="Checkout Process and Order Placement" name="Failed Order Placement" time="2.612">
+<failure type="org.openqa.selenium.ElementClickInterceptedException" message="element click intercepted: Element &lt;p class=&quot;MuiTypography-root MuiTypography-body1 css-1xkalhi&quot;&gt;...&lt;/p&gt; is not clickable at point (96, 710). Other element would receive the click: &lt;div class=&quot;MuiStack-root css-1a5tci4&quot;&gt;...&lt;/div&gt;
+  (Session info: chrome=143.0.7499.110)
+Build info: version: '4.27.0', revision: 'd6e718d134'
+System info: os.name: 'Mac OS X', os.arch: 'x86_64', os.version: '26.1', java.version: '21.0.8'
+Driver info: io.appium.java_client.AppiumDriver
+Command: [4b151676-59cf-48fb-9cf8-3d6bafff8521, clickElement {id=f.B6662030AEB857456888C3A6C09972D3.d.A47ECD4D1C56C7B69D7ACB8EA453B7D3.e.354}]
+Capabilities {appium:automationName: UiAutomator2, appium:chromedriverAutodownload: true, appium:chromedriverExecutable: /Users/apple/Downloads/chro..., appium:chromedriverUseSystemExecutable: false, appium:databaseEnabled: false, appium:desired: {appActivity: com.android.chrome/com.goog..., appPackage: com.android.chrome, automationName: UiAutomator2, browserName: Chrome, chromedriverAutodownload: true, chromedriverExecutable: /Users/apple/Downloads/chro..., chromedriverUseSystemExecutable: false, ensureWebviewsHavePages: true, forceAppLaunch: true, noReset: true, platformName: ANDROID}, appium:deviceApiLevel: 33, appium:deviceManufacturer: Google, appium:deviceModel: Pixel 4a, appium:deviceName: 14081JEC202036, appium:deviceScreenDensity: 440, appium:deviceScreenSize: 1080x2340, appium:deviceUDID: 14081JEC202036, appium:ensureWebviewsHavePages: true, appium:forceAppLaunch: true, appium:javascriptEnabled: true, appium:locationContextEnabled: false, appium:networkConnectionEnabled: true, appium:noReset: true, appium:pixelRatio: 2.75, appium:platformVersion: 13, appium:statBarHeight: 136, appium:takesScreenshot: true, appium:viewportRect: {height: 2204, left: 0, top: 136, width: 1080}, appium:warnings: {}, appium:webStorageEnabled: false, browserName: Chrome, platformName: ANDROID}
+Element: [[AppiumDriver: Chrome on ANDROID (4b151676-59cf-48fb-9cf8-3d6bafff8521)] -&gt; xpath: //p[contains(text(),'Home')]]
+Session ID: 4b151676-59cf-48fb-9cf8-3d6bafff8521">
+<![CDATA[org.openqa.selenium.ElementClickInterceptedException: element click intercepted: Element <p class="MuiTypography-root MuiTypography-body1 css-1xkalhi">...</p> is not clickable at point (96, 710). Other element would receive the click: <div class="MuiStack-root css-1a5tci4">...</div>
+  (Session info: chrome=143.0.7499.110)
+Build info: version: '4.27.0', revision: 'd6e718d134'
+System info: os.name: 'Mac OS X', os.arch: 'x86_64', os.version: '26.1', java.version: '21.0.8'
+Driver info: io.appium.java_client.AppiumDriver
+Command: [4b151676-59cf-48fb-9cf8-3d6bafff8521, clickElement {id=f.B6662030AEB857456888C3A6C09972D3.d.A47ECD4D1C56C7B69D7ACB8EA453B7D3.e.354}]
+Capabilities {appium:automationName: UiAutomator2, appium:chromedriverAutodownload: true, appium:chromedriverExecutable: /Users/apple/Downloads/chro..., appium:chromedriverUseSystemExecutable: false, appium:databaseEnabled: false, appium:desired: {appActivity: com.android.chrome/com.goog..., appPackage: com.android.chrome, automationName: UiAutomator2, browserName: Chrome, chromedriverAutodownload: true, chromedriverExecutable: /Users/apple/Downloads/chro..., chromedriverUseSystemExecutable: false, ensureWebviewsHavePages: true, forceAppLaunch: true, noReset: true, platformName: ANDROID}, appium:deviceApiLevel: 33, appium:deviceManufacturer: Google, appium:deviceModel: Pixel 4a, appium:deviceName: 14081JEC202036, appium:deviceScreenDensity: 440, appium:deviceScreenSize: 1080x2340, appium:deviceUDID: 14081JEC202036, appium:ensureWebviewsHavePages: true, appium:forceAppLaunch: true, appium:javascriptEnabled: true, appium:locationContextEnabled: false, appium:networkConnectionEnabled: true, appium:noReset: true, appium:pixelRatio: 2.75, appium:platformVersion: 13, appium:statBarHeight: 136, appium:takesScreenshot: true, appium:viewportRect: {height: 2204, left: 0, top: 136, width: 1080}, appium:warnings: {}, appium:webStorageEnabled: false, browserName: Chrome, platformName: ANDROID}
+Element: [[AppiumDriver: Chrome on ANDROID (4b151676-59cf-48fb-9cf8-3d6bafff8521)] -> xpath: //p[contains(text(),'Home')]]
+Session ID: 4b151676-59cf-48fb-9cf8-3d6bafff8521
+	at java.base/jdk.internal.reflect.DirectConstructorHandleAccessor.newInstance(DirectConstructorHandleAccessor.java:62)
+	at java.base/java.lang.reflect.Constructor.newInstanceWithCaller(Constructor.java:502)
+	at java.base/java.lang.reflect.Constructor.newInstance(Constructor.java:486)
+	at org.openqa.selenium.remote.ErrorCodec.decode(ErrorCodec.java:167)
+	at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:138)
+	at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:50)
+	at org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:190)
+	at io.appium.java_client.remote.AppiumCommandExecutor.execute(AppiumCommandExecutor.java:237)
+	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:545)
+	at org.openqa.selenium.remote.RemoteWebElement.execute(RemoteWebElement.java:223)
+	at org.openqa.selenium.remote.RemoteWebElement.click(RemoteWebElement.java:76)
+	at pages.BasePage.click(BasePage.java:96)
+	at pages.HomePage.clickOnHomeButton(HomePage.java:60)
+	at scenarios.stepDefinitions.CheckoutStep.user_is_on_the_homepage(CheckoutStep.java:49)
+	at ✽.user is on the homepage(file:///Volumes/Macintosh%20HD%20-%20Data/Code/SSB_Automation_Msite_Sanity/src/test/java/scenarios/features/checkout.feature:30)
+]]>
+</failure>
+<system-out><![CDATA[
+Given user is on the homepage...............................................failed
+When user selects a fragrance category from home page.......................skipped
+And user clicks the sub category from fragrance page........................skipped
+And user selects a product from fragrance plp...............................skipped
+And User clicks on the add to bag...........................................skipped
+And user clicks on the cart icon in the header..............................skipped
+And User clicks on the proceed to pay.......................................skipped
+And User clicks on the continue to payment..................................skipped
+And user selecting UPI option...............................................skipped
+And user enters the UPI id..................................................skipped
+And user validates that UPI id..............................................skipped
+And User validate that an error message indicating payment failure..........skipped
+]]></system-out>
+</testcase>
+<testcase classname="Verify the Discover Modules in the Mobile Application" name="Verify the Categories Functionality" time="40.392">
+<failure type="org.openqa.selenium.TimeoutException" message="Expected condition failed: waiting for visibility of element located by By.xpath: //p[contains(text(),'Home')] (tried for 20 second(s) with 500 milliseconds interval)">
+<![CDATA[org.openqa.selenium.TimeoutException: Expected condition failed: waiting for visibility of element located by By.xpath: //p[contains(text(),'Home')] (tried for 20 second(s) with 500 milliseconds interval)
+	at org.openqa.selenium.support.ui.WebDriverWait.timeoutException(WebDriverWait.java:84)
+	at org.openqa.selenium.support.ui.FluentWait.until(FluentWait.java:228)
+	at pages.BasePage.waitForVisibility(BasePage.java:39)
+	at pages.HomePage.clickOnHomeButton(HomePage.java:59)
+	at scenarios.stepDefinitions.CheckoutStep.user_is_on_the_homepage(CheckoutStep.java:49)
+	at ✽.user is on the homepage(file:///Volumes/Macintosh%20HD%20-%20Data/Code/SSB_Automation_Msite_Sanity/src/test/java/scenarios/features/discover.feature:16)
+Caused by: org.openqa.selenium.NoSuchWindowException: no such window: target window already closed
+from unknown error: web view not found
+  (Session info: chrome=143.0.7499.110)
+Build info: version: '4.27.0', revision: 'd6e718d134'
+System info: os.name: 'Mac OS X', os.arch: 'x86_64', os.version: '26.1', java.version: '21.0.8'
+Driver info: io.appium.java_client.AppiumDriver
+Command: [4b151676-59cf-48fb-9cf8-3d6bafff8521, findElement {using=xpath, value=//p[contains(text(),'Home')]}]
+Capabilities {appium:automationName: UiAutomator2, appium:chromedriverAutodownload: true, appium:chromedriverExecutable: /Users/apple/Downloads/chro..., appium:chromedriverUseSystemExecutable: false, appium:databaseEnabled: false, appium:desired: {appActivity: com.android.chrome/com.goog..., appPackage: com.android.chrome, automationName: UiAutomator2, browserName: Chrome, chromedriverAutodownload: true, chromedriverExecutable: /Users/apple/Downloads/chro..., chromedriverUseSystemExecutable: false, ensureWebviewsHavePages: true, forceAppLaunch: true, noReset: true, platformName: ANDROID}, appium:deviceApiLevel: 33, appium:deviceManufacturer: Google, appium:deviceModel: Pixel 4a, appium:deviceName: 14081JEC202036, appium:deviceScreenDensity: 440, appium:deviceScreenSize: 1080x2340, appium:deviceUDID: 14081JEC202036, appium:ensureWebviewsHavePages: true, appium:forceAppLaunch: true, appium:javascriptEnabled: true, appium:locationContextEnabled: false, appium:networkConnectionEnabled: true, appium:noReset: true, appium:pixelRatio: 2.75, appium:platformVersion: 13, appium:statBarHeight: 136, appium:takesScreenshot: true, appium:viewportRect: {height: 2204, left: 0, top: 136, width: 1080}, appium:warnings: {}, appium:webStorageEnabled: false, browserName: Chrome, platformName: ANDROID}
+Session ID: 4b151676-59cf-48fb-9cf8-3d6bafff8521
+	at java.base/jdk.internal.reflect.DirectConstructorHandleAccessor.newInstance(DirectConstructorHandleAccessor.java:62)
+	at java.base/java.lang.reflect.Constructor.newInstanceWithCaller(Constructor.java:502)
+	at java.base/java.lang.reflect.Constructor.newInstance(Constructor.java:486)
+	at org.openqa.selenium.remote.ErrorCodec.decode(ErrorCodec.java:167)
+	at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:138)
+	at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:50)
+	at org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:190)
+	at io.appium.java_client.remote.AppiumCommandExecutor.execute(AppiumCommandExecutor.java:237)
+	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:545)
+	at org.openqa.selenium.remote.ElementLocation$ElementFinder$2.findElement(ElementLocation.java:165)
+	at org.openqa.selenium.remote.ElementLocation.findElement(ElementLocation.java:59)
+	at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:368)
+	at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:362)
+	at org.openqa.selenium.support.ui.ExpectedConditions$7.apply(ExpectedConditions.java:194)
+	at org.openqa.selenium.support.ui.ExpectedConditions$7.apply(ExpectedConditions.java:190)
+	at org.openqa.selenium.support.ui.FluentWait.until(FluentWait.java:203)
+	at pages.BasePage.waitForVisibility(BasePage.java:39)
+	at pages.HomePage.clickOnHomeButton(HomePage.java:59)
+	at scenarios.stepDefinitions.CheckoutStep.user_is_on_the_homepage(CheckoutStep.java:49)
+	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:103)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:580)
+	at io.cucumber.java.Invoker.doInvoke(Invoker.java:66)
+	at io.cucumber.java.Invoker.invoke(Invoker.java:24)
+	at io.cucumber.java.AbstractGlueDefinition.invokeMethod(AbstractGlueDefinition.java:47)
+	at io.cucumber.java.JavaStepDefinition.execute(JavaStepDefinition.java:29)
+	at io.cucumber.core.runner.CoreStepDefinition.execute(CoreStepDefinition.java:66)
+	at io.cucumber.core.runner.PickleStepDefinitionMatch.runStep(PickleStepDefinitionMatch.java:62)
+	at io.cucumber.core.runner.ExecutionMode$1.execute(ExecutionMode.java:10)
+	at io.cucumber.core.runner.TestStep.executeStep(TestStep.java:81)
+	at io.cucumber.core.runner.TestStep.run(TestStep.java:53)
+	at io.cucumber.core.runner.PickleStepTestStep.run(PickleStepTestStep.java:51)
+	at io.cucumber.core.runner.TestCase.run(TestCase.java:84)
+	at io.cucumber.core.runner.Runner.runPickle(Runner.java:75)
+	at io.cucumber.testng.TestNGCucumberRunner.lambda$runScenario$1(TestNGCucumberRunner.java:135)
+	at io.cucumber.core.runtime.CucumberExecutionContext.lambda$runTestCase$5(CucumberExecutionContext.java:136)
+	at io.cucumber.core.runtime.RethrowingThrowableCollector.executeAndThrow(RethrowingThrowableCollector.java:23)
+	at io.cucumber.core.runtime.CucumberExecutionContext.runTestCase(CucumberExecutionContext.java:136)
+	at io.cucumber.testng.TestNGCucumberRunner.runScenario(TestNGCucumberRunner.java:132)
+	at io.cucumber.testng.AbstractTestNGCucumberTests.runScenario(AbstractTestNGCucumberTests.java:35)
+	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:103)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:580)
+	at org.testng.internal.invokers.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:141)
+	at org.testng.internal.invokers.TestInvoker.invokeMethod(TestInvoker.java:686)
+	at org.testng.internal.invokers.TestInvoker.invokeTestMethod(TestInvoker.java:230)
+	at org.testng.internal.invokers.MethodRunner.runInSequence(MethodRunner.java:63)
+	at org.testng.internal.invokers.TestInvoker$MethodInvocationAgent.invoke(TestInvoker.java:992)
+	at org.testng.internal.invokers.TestInvoker.invokeTestMethods(TestInvoker.java:203)
+	at org.testng.internal.invokers.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:154)
+	at org.testng.internal.invokers.TestMethodWorker.run(TestMethodWorker.java:134)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1596)
+	at org.testng.TestRunner.privateRun(TestRunner.java:739)
+	at org.testng.TestRunner.run(TestRunner.java:614)
+	at org.testng.SuiteRunner.runTest(SuiteRunner.java:421)
+	at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:413)
+	at org.testng.SuiteRunner.privateRun(SuiteRunner.java:373)
+	at org.testng.SuiteRunner.run(SuiteRunner.java:312)
+	at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)
+	at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:95)
+	at org.testng.TestNG.runSuitesSequentially(TestNG.java:1274)
+	at org.testng.TestNG.runSuitesLocally(TestNG.java:1208)
+	at org.testng.TestNG.runSuites(TestNG.java:1112)
+	at org.testng.TestNG.run(TestNG.java:1079)
+	at com.intellij.rt.testng.IDEARemoteTestNG.run(IDEARemoteTestNG.java:65)
+	at com.intellij.rt.testng.RemoteTestNGStarter.main(RemoteTestNGStarter.java:105)
+]]>
+</failure>
+<system-out><![CDATA[
+Given user back to home page................................................passed
+Given user is on the homepage...............................................failed
+Given User clicks on Discover in the footer.................................skipped
+When user selects a skin type...............................................skipped
+And user selects a cleansers................................................skipped
+And user validates that selected category page navigation...................skipped
+And user back to home page..................................................skipped
+Then user selects a personal care...........................................skipped
+And user selects a hands and feet...........................................skipped
+And user validates that selected category page navigation...................skipped
+]]></system-out>
+</testcase>
+<testcase classname="Verify the Discover Modules in the Mobile Application" name="Verify the Brands Functionality" time="40.367">
+<failure type="org.openqa.selenium.TimeoutException" message="Expected condition failed: waiting for visibility of element located by By.xpath: //button[contains(text(),'Brands')] (tried for 20 second(s) with 500 milliseconds interval)">
+<![CDATA[org.openqa.selenium.TimeoutException: Expected condition failed: waiting for visibility of element located by By.xpath: //button[contains(text(),'Brands')] (tried for 20 second(s) with 500 milliseconds interval)
+	at org.openqa.selenium.support.ui.WebDriverWait.timeoutException(WebDriverWait.java:84)
+	at org.openqa.selenium.support.ui.FluentWait.until(FluentWait.java:228)
+	at pages.BasePage.waitForVisibility(BasePage.java:39)
+	at pages.DiscoverPage.clickOnBrands(DiscoverPage.java:56)
+	at scenarios.stepDefinitions.DiscoverStep.user_clicks_on_the_brands(DiscoverStep.java:76)
+	at ✽.user clicks on the brands(file:///Volumes/Macintosh%20HD%20-%20Data/Code/SSB_Automation_Msite_Sanity/src/test/java/scenarios/features/discover.feature:29)
+Caused by: org.openqa.selenium.NoSuchWindowException: no such window: target window already closed
+from unknown error: web view not found
+  (Session info: chrome=143.0.7499.110)
+Build info: version: '4.27.0', revision: 'd6e718d134'
+System info: os.name: 'Mac OS X', os.arch: 'x86_64', os.version: '26.1', java.version: '21.0.8'
+Driver info: io.appium.java_client.AppiumDriver
+Command: [4b151676-59cf-48fb-9cf8-3d6bafff8521, findElement {using=xpath, value=//button[contains(text(),'Brands')]}]
+Capabilities {appium:automationName: UiAutomator2, appium:chromedriverAutodownload: true, appium:chromedriverExecutable: /Users/apple/Downloads/chro..., appium:chromedriverUseSystemExecutable: false, appium:databaseEnabled: false, appium:desired: {appActivity: com.android.chrome/com.goog..., appPackage: com.android.chrome, automationName: UiAutomator2, browserName: Chrome, chromedriverAutodownload: true, chromedriverExecutable: /Users/apple/Downloads/chro..., chromedriverUseSystemExecutable: false, ensureWebviewsHavePages: true, forceAppLaunch: true, noReset: true, platformName: ANDROID}, appium:deviceApiLevel: 33, appium:deviceManufacturer: Google, appium:deviceModel: Pixel 4a, appium:deviceName: 14081JEC202036, appium:deviceScreenDensity: 440, appium:deviceScreenSize: 1080x2340, appium:deviceUDID: 14081JEC202036, appium:ensureWebviewsHavePages: true, appium:forceAppLaunch: true, appium:javascriptEnabled: true, appium:locationContextEnabled: false, appium:networkConnectionEnabled: true, appium:noReset: true, appium:pixelRatio: 2.75, appium:platformVersion: 13, appium:statBarHeight: 136, appium:takesScreenshot: true, appium:viewportRect: {height: 2204, left: 0, top: 136, width: 1080}, appium:warnings: {}, appium:webStorageEnabled: false, browserName: Chrome, platformName: ANDROID}
+Session ID: 4b151676-59cf-48fb-9cf8-3d6bafff8521
+	at java.base/jdk.internal.reflect.DirectConstructorHandleAccessor.newInstance(DirectConstructorHandleAccessor.java:62)
+	at java.base/java.lang.reflect.Constructor.newInstanceWithCaller(Constructor.java:502)
+	at java.base/java.lang.reflect.Constructor.newInstance(Constructor.java:486)
+	at org.openqa.selenium.remote.ErrorCodec.decode(ErrorCodec.java:167)
+	at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:138)
+	at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:50)
+	at org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:190)
+	at io.appium.java_client.remote.AppiumCommandExecutor.execute(AppiumCommandExecutor.java:237)
+	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:545)
+	at org.openqa.selenium.remote.ElementLocation$ElementFinder$2.findElement(ElementLocation.java:165)
+	at org.openqa.selenium.remote.ElementLocation.findElement(ElementLocation.java:59)
+	at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:368)
+	at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:362)
+	at org.openqa.selenium.support.ui.ExpectedConditions$7.apply(ExpectedConditions.java:194)
+	at org.openqa.selenium.support.ui.ExpectedConditions$7.apply(ExpectedConditions.java:190)
+	at org.openqa.selenium.support.ui.FluentWait.until(FluentWait.java:203)
+	at pages.BasePage.waitForVisibility(BasePage.java:39)
+	at pages.DiscoverPage.clickOnBrands(DiscoverPage.java:56)
+	at scenarios.stepDefinitions.DiscoverStep.user_clicks_on_the_brands(DiscoverStep.java:76)
+	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:103)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:580)
+	at io.cucumber.java.Invoker.doInvoke(Invoker.java:66)
+	at io.cucumber.java.Invoker.invoke(Invoker.java:24)
+	at io.cucumber.java.AbstractGlueDefinition.invokeMethod(AbstractGlueDefinition.java:47)
+	at io.cucumber.java.JavaStepDefinition.execute(JavaStepDefinition.java:29)
+	at io.cucumber.core.runner.CoreStepDefinition.execute(CoreStepDefinition.java:66)
+	at io.cucumber.core.runner.PickleStepDefinitionMatch.runStep(PickleStepDefinitionMatch.java:62)
+	at io.cucumber.core.runner.ExecutionMode$1.execute(ExecutionMode.java:10)
+	at io.cucumber.core.runner.TestStep.executeStep(TestStep.java:81)
+	at io.cucumber.core.runner.TestStep.run(TestStep.java:53)
+	at io.cucumber.core.runner.PickleStepTestStep.run(PickleStepTestStep.java:51)
+	at io.cucumber.core.runner.TestCase.run(TestCase.java:84)
+	at io.cucumber.core.runner.Runner.runPickle(Runner.java:75)
+	at io.cucumber.testng.TestNGCucumberRunner.lambda$runScenario$1(TestNGCucumberRunner.java:135)
+	at io.cucumber.core.runtime.CucumberExecutionContext.lambda$runTestCase$5(CucumberExecutionContext.java:136)
+	at io.cucumber.core.runtime.RethrowingThrowableCollector.executeAndThrow(RethrowingThrowableCollector.java:23)
+	at io.cucumber.core.runtime.CucumberExecutionContext.runTestCase(CucumberExecutionContext.java:136)
+	at io.cucumber.testng.TestNGCucumberRunner.runScenario(TestNGCucumberRunner.java:132)
+	at io.cucumber.testng.AbstractTestNGCucumberTests.runScenario(AbstractTestNGCucumberTests.java:35)
+	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:103)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:580)
+	at org.testng.internal.invokers.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:141)
+	at org.testng.internal.invokers.TestInvoker.invokeMethod(TestInvoker.java:686)
+	at org.testng.internal.invokers.TestInvoker.invokeTestMethod(TestInvoker.java:230)
+	at org.testng.internal.invokers.MethodRunner.runInSequence(MethodRunner.java:63)
+	at org.testng.internal.invokers.TestInvoker$MethodInvocationAgent.invoke(TestInvoker.java:992)
+	at org.testng.internal.invokers.TestInvoker.invokeTestMethods(TestInvoker.java:203)
+	at org.testng.internal.invokers.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:154)
+	at org.testng.internal.invokers.TestMethodWorker.run(TestMethodWorker.java:134)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1596)
+	at org.testng.TestRunner.privateRun(TestRunner.java:739)
+	at org.testng.TestRunner.run(TestRunner.java:614)
+	at org.testng.SuiteRunner.runTest(SuiteRunner.java:421)
+	at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:413)
+	at org.testng.SuiteRunner.privateRun(SuiteRunner.java:373)
+	at org.testng.SuiteRunner.run(SuiteRunner.java:312)
+	at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)
+	at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:95)
+	at org.testng.TestNG.runSuitesSequentially(TestNG.java:1274)
+	at org.testng.TestNG.runSuitesLocally(TestNG.java:1208)
+	at org.testng.TestNG.runSuites(TestNG.java:1112)
+	at org.testng.TestNG.run(TestNG.java:1079)
+	at com.intellij.rt.testng.IDEARemoteTestNG.run(IDEARemoteTestNG.java:65)
+	at com.intellij.rt.testng.RemoteTestNGStarter.main(RemoteTestNGStarter.java:105)
+]]>
+</failure>
+<system-out><![CDATA[
+Given user back to home page................................................passed
+When user clicks on the brands..............................................failed
+And user selects a brand from customer favorites............................skipped
+And user validates that selected brands navigation..........................skipped
+And user back to home page..................................................skipped
+And user clicks on the brands...............................................skipped
+Then user selects a brands from the trending................................skipped
+And user validates that selected brands navigation..........................skipped
+]]></system-out>
+</testcase>
+<testcase classname="Verify the Header Functionality" name="Verify the Wishlist Functionality" time="20.388">
+<failure type="org.openqa.selenium.TimeoutException" message="Expected condition failed: waiting for visibility of element located by By.xpath: //p[contains(text(),'Home')] (tried for 20 second(s) with 500 milliseconds interval)">
+<![CDATA[org.openqa.selenium.TimeoutException: Expected condition failed: waiting for visibility of element located by By.xpath: //p[contains(text(),'Home')] (tried for 20 second(s) with 500 milliseconds interval)
+	at org.openqa.selenium.support.ui.WebDriverWait.timeoutException(WebDriverWait.java:84)
+	at org.openqa.selenium.support.ui.FluentWait.until(FluentWait.java:228)
+	at pages.BasePage.waitForVisibility(BasePage.java:39)
+	at pages.HomePage.clickOnHomeButton(HomePage.java:59)
+	at scenarios.stepDefinitions.CheckoutStep.user_is_on_the_homepage(CheckoutStep.java:49)
+	at ✽.user is on the homepage(file:///Volumes/Macintosh%20HD%20-%20Data/Code/SSB_Automation_Msite_Sanity/src/test/java/scenarios/features/header.feature:15)
+Caused by: org.openqa.selenium.NoSuchWindowException: no such window: target window already closed
+from unknown error: web view not found
+  (Session info: chrome=143.0.7499.110)
+Build info: version: '4.27.0', revision: 'd6e718d134'
+System info: os.name: 'Mac OS X', os.arch: 'x86_64', os.version: '26.1', java.version: '21.0.8'
+Driver info: io.appium.java_client.AppiumDriver
+Command: [4b151676-59cf-48fb-9cf8-3d6bafff8521, findElement {using=xpath, value=//p[contains(text(),'Home')]}]
+Capabilities {appium:automationName: UiAutomator2, appium:chromedriverAutodownload: true, appium:chromedriverExecutable: /Users/apple/Downloads/chro..., appium:chromedriverUseSystemExecutable: false, appium:databaseEnabled: false, appium:desired: {appActivity: com.android.chrome/com.goog..., appPackage: com.android.chrome, automationName: UiAutomator2, browserName: Chrome, chromedriverAutodownload: true, chromedriverExecutable: /Users/apple/Downloads/chro..., chromedriverUseSystemExecutable: false, ensureWebviewsHavePages: true, forceAppLaunch: true, noReset: true, platformName: ANDROID}, appium:deviceApiLevel: 33, appium:deviceManufacturer: Google, appium:deviceModel: Pixel 4a, appium:deviceName: 14081JEC202036, appium:deviceScreenDensity: 440, appium:deviceScreenSize: 1080x2340, appium:deviceUDID: 14081JEC202036, appium:ensureWebviewsHavePages: true, appium:forceAppLaunch: true, appium:javascriptEnabled: true, appium:locationContextEnabled: false, appium:networkConnectionEnabled: true, appium:noReset: true, appium:pixelRatio: 2.75, appium:platformVersion: 13, appium:statBarHeight: 136, appium:takesScreenshot: true, appium:viewportRect: {height: 2204, left: 0, top: 136, width: 1080}, appium:warnings: {}, appium:webStorageEnabled: false, browserName: Chrome, platformName: ANDROID}
+Session ID: 4b151676-59cf-48fb-9cf8-3d6bafff8521
+	at java.base/jdk.internal.reflect.DirectConstructorHandleAccessor.newInstance(DirectConstructorHandleAccessor.java:62)
+	at java.base/java.lang.reflect.Constructor.newInstanceWithCaller(Constructor.java:502)
+	at java.base/java.lang.reflect.Constructor.newInstance(Constructor.java:486)
+	at org.openqa.selenium.remote.ErrorCodec.decode(ErrorCodec.java:167)
+	at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:138)
+	at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:50)
+	at org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:190)
+	at io.appium.java_client.remote.AppiumCommandExecutor.execute(AppiumCommandExecutor.java:237)
+	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:545)
+	at org.openqa.selenium.remote.ElementLocation$ElementFinder$2.findElement(ElementLocation.java:165)
+	at org.openqa.selenium.remote.ElementLocation.findElement(ElementLocation.java:59)
+	at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:368)
+	at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:362)
+	at org.openqa.selenium.support.ui.ExpectedConditions$7.apply(ExpectedConditions.java:194)
+	at org.openqa.selenium.support.ui.ExpectedConditions$7.apply(ExpectedConditions.java:190)
+	at org.openqa.selenium.support.ui.FluentWait.until(FluentWait.java:203)
+	at pages.BasePage.waitForVisibility(BasePage.java:39)
+	at pages.HomePage.clickOnHomeButton(HomePage.java:59)
+	at scenarios.stepDefinitions.CheckoutStep.user_is_on_the_homepage(CheckoutStep.java:49)
+	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:103)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:580)
+	at io.cucumber.java.Invoker.doInvoke(Invoker.java:66)
+	at io.cucumber.java.Invoker.invoke(Invoker.java:24)
+	at io.cucumber.java.AbstractGlueDefinition.invokeMethod(AbstractGlueDefinition.java:47)
+	at io.cucumber.java.JavaStepDefinition.execute(JavaStepDefinition.java:29)
+	at io.cucumber.core.runner.CoreStepDefinition.execute(CoreStepDefinition.java:66)
+	at io.cucumber.core.runner.PickleStepDefinitionMatch.runStep(PickleStepDefinitionMatch.java:62)
+	at io.cucumber.core.runner.ExecutionMode$1.execute(ExecutionMode.java:10)
+	at io.cucumber.core.runner.TestStep.executeStep(TestStep.java:81)
+	at io.cucumber.core.runner.TestStep.run(TestStep.java:53)
+	at io.cucumber.core.runner.PickleStepTestStep.run(PickleStepTestStep.java:51)
+	at io.cucumber.core.runner.TestCase.run(TestCase.java:84)
+	at io.cucumber.core.runner.Runner.runPickle(Runner.java:75)
+	at io.cucumber.testng.TestNGCucumberRunner.lambda$runScenario$1(TestNGCucumberRunner.java:135)
+	at io.cucumber.core.runtime.CucumberExecutionContext.lambda$runTestCase$5(CucumberExecutionContext.java:136)
+	at io.cucumber.core.runtime.RethrowingThrowableCollector.executeAndThrow(RethrowingThrowableCollector.java:23)
+	at io.cucumber.core.runtime.CucumberExecutionContext.runTestCase(CucumberExecutionContext.java:136)
+	at io.cucumber.testng.TestNGCucumberRunner.runScenario(TestNGCucumberRunner.java:132)
+	at io.cucumber.testng.AbstractTestNGCucumberTests.runScenario(AbstractTestNGCucumberTests.java:35)
+	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:103)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:580)
+	at org.testng.internal.invokers.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:141)
+	at org.testng.internal.invokers.TestInvoker.invokeMethod(TestInvoker.java:686)
+	at org.testng.internal.invokers.TestInvoker.invokeTestMethod(TestInvoker.java:230)
+	at org.testng.internal.invokers.MethodRunner.runInSequence(MethodRunner.java:63)
+	at org.testng.internal.invokers.TestInvoker$MethodInvocationAgent.invoke(TestInvoker.java:992)
+	at org.testng.internal.invokers.TestInvoker.invokeTestMethods(TestInvoker.java:203)
+	at org.testng.internal.invokers.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:154)
+	at org.testng.internal.invokers.TestMethodWorker.run(TestMethodWorker.java:134)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1596)
+	at org.testng.TestRunner.privateRun(TestRunner.java:739)
+	at org.testng.TestRunner.run(TestRunner.java:614)
+	at org.testng.SuiteRunner.runTest(SuiteRunner.java:421)
+	at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:413)
+	at org.testng.SuiteRunner.privateRun(SuiteRunner.java:373)
+	at org.testng.SuiteRunner.run(SuiteRunner.java:312)
+	at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)
+	at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:95)
+	at org.testng.TestNG.runSuitesSequentially(TestNG.java:1274)
+	at org.testng.TestNG.runSuitesLocally(TestNG.java:1208)
+	at org.testng.TestNG.runSuites(TestNG.java:1112)
+	at org.testng.TestNG.run(TestNG.java:1079)
+	at com.intellij.rt.testng.IDEARemoteTestNG.run(IDEARemoteTestNG.java:65)
+	at com.intellij.rt.testng.RemoteTestNGStarter.main(RemoteTestNGStarter.java:105)
+]]>
+</failure>
+<system-out><![CDATA[
+Given user is on the homepage...............................................failed
+When User clicks on the wishlist icon in the header.........................skipped
+And User validate that wishlist icon navigate to the wishlist page..........skipped
+And User select a product from wishlist page................................skipped
+And User validate that it navigates to the PDP..............................skipped
+And User return to the wishlist page........................................skipped
+And User adds a product to the cart from the wishlist page..................skipped
+And User validate that product add to wishlist successfully.................skipped
+Then User removes a product from the wishlist page..........................skipped
+And User clicks on the remove item for removing product from wishlist.......skipped
+And User validate that product removed from wishlist........................skipped
+]]></system-out>
+</testcase>
+<testcase classname="Verify the Header Functionality" name="Verify the Search Functionality" time="40.373">
+<failure type="org.openqa.selenium.TimeoutException" message="Expected condition failed: waiting for element to be clickable: By.xpath: //input[@placeholder='Search'] (tried for 20 second(s) with 500 milliseconds interval)">
+<![CDATA[org.openqa.selenium.TimeoutException: Expected condition failed: waiting for element to be clickable: By.xpath: //input[@placeholder='Search'] (tried for 20 second(s) with 500 milliseconds interval)
+	at org.openqa.selenium.support.ui.WebDriverWait.timeoutException(WebDriverWait.java:84)
+	at org.openqa.selenium.support.ui.FluentWait.until(FluentWait.java:228)
+	at pages.HeaderPage.clicksOnTheSearEditBox(HeaderPage.java:33)
+	at scenarios.stepDefinitions.HeaderStep.user_clicks_on_the_search_bar(HeaderStep.java:96)
+	at ✽.User clicks on the search bar(file:///Volumes/Macintosh%20HD%20-%20Data/Code/SSB_Automation_Msite_Sanity/src/test/java/scenarios/features/header.feature:31)
+Caused by: org.openqa.selenium.NoSuchWindowException: no such window: target window already closed
+from unknown error: web view not found
+  (Session info: chrome=143.0.7499.110)
+Build info: version: '4.27.0', revision: 'd6e718d134'
+System info: os.name: 'Mac OS X', os.arch: 'x86_64', os.version: '26.1', java.version: '21.0.8'
+Driver info: io.appium.java_client.AppiumDriver
+Command: [4b151676-59cf-48fb-9cf8-3d6bafff8521, findElement {using=xpath, value=//input[@placeholder='Search']}]
+Capabilities {appium:automationName: UiAutomator2, appium:chromedriverAutodownload: true, appium:chromedriverExecutable: /Users/apple/Downloads/chro..., appium:chromedriverUseSystemExecutable: false, appium:databaseEnabled: false, appium:desired: {appActivity: com.android.chrome/com.goog..., appPackage: com.android.chrome, automationName: UiAutomator2, browserName: Chrome, chromedriverAutodownload: true, chromedriverExecutable: /Users/apple/Downloads/chro..., chromedriverUseSystemExecutable: false, ensureWebviewsHavePages: true, forceAppLaunch: true, noReset: true, platformName: ANDROID}, appium:deviceApiLevel: 33, appium:deviceManufacturer: Google, appium:deviceModel: Pixel 4a, appium:deviceName: 14081JEC202036, appium:deviceScreenDensity: 440, appium:deviceScreenSize: 1080x2340, appium:deviceUDID: 14081JEC202036, appium:ensureWebviewsHavePages: true, appium:forceAppLaunch: true, appium:javascriptEnabled: true, appium:locationContextEnabled: false, appium:networkConnectionEnabled: true, appium:noReset: true, appium:pixelRatio: 2.75, appium:platformVersion: 13, appium:statBarHeight: 136, appium:takesScreenshot: true, appium:viewportRect: {height: 2204, left: 0, top: 136, width: 1080}, appium:warnings: {}, appium:webStorageEnabled: false, browserName: Chrome, platformName: ANDROID}
+Session ID: 4b151676-59cf-48fb-9cf8-3d6bafff8521
+	at java.base/jdk.internal.reflect.DirectConstructorHandleAccessor.newInstance(DirectConstructorHandleAccessor.java:62)
+	at java.base/java.lang.reflect.Constructor.newInstanceWithCaller(Constructor.java:502)
+	at java.base/java.lang.reflect.Constructor.newInstance(Constructor.java:486)
+	at org.openqa.selenium.remote.ErrorCodec.decode(ErrorCodec.java:167)
+	at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:138)
+	at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:50)
+	at org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:190)
+	at io.appium.java_client.remote.AppiumCommandExecutor.execute(AppiumCommandExecutor.java:237)
+	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:545)
+	at org.openqa.selenium.remote.ElementLocation$ElementFinder$2.findElement(ElementLocation.java:165)
+	at org.openqa.selenium.remote.ElementLocation.findElement(ElementLocation.java:59)
+	at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:368)
+	at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:362)
+	at org.openqa.selenium.support.ui.ExpectedConditions$7.apply(ExpectedConditions.java:194)
+	at org.openqa.selenium.support.ui.ExpectedConditions$7.apply(ExpectedConditions.java:190)
+	at org.openqa.selenium.support.ui.ExpectedConditions$22.apply(ExpectedConditions.java:627)
+	at org.openqa.selenium.support.ui.ExpectedConditions$22.apply(ExpectedConditions.java:624)
+	at org.openqa.selenium.support.ui.FluentWait.until(FluentWait.java:203)
+	at pages.HeaderPage.clicksOnTheSearEditBox(HeaderPage.java:33)
+	at scenarios.stepDefinitions.HeaderStep.user_clicks_on_the_search_bar(HeaderStep.java:96)
+	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:103)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:580)
+	at io.cucumber.java.Invoker.doInvoke(Invoker.java:66)
+	at io.cucumber.java.Invoker.invoke(Invoker.java:24)
+	at io.cucumber.java.AbstractGlueDefinition.invokeMethod(AbstractGlueDefinition.java:47)
+	at io.cucumber.java.JavaStepDefinition.execute(JavaStepDefinition.java:29)
+	at io.cucumber.core.runner.CoreStepDefinition.execute(CoreStepDefinition.java:66)
+	at io.cucumber.core.runner.PickleStepDefinitionMatch.runStep(PickleStepDefinitionMatch.java:62)
+	at io.cucumber.core.runner.ExecutionMode$1.execute(ExecutionMode.java:10)
+	at io.cucumber.core.runner.TestStep.executeStep(TestStep.java:81)
+	at io.cucumber.core.runner.TestStep.run(TestStep.java:53)
+	at io.cucumber.core.runner.PickleStepTestStep.run(PickleStepTestStep.java:51)
+	at io.cucumber.core.runner.TestCase.run(TestCase.java:84)
+	at io.cucumber.core.runner.Runner.runPickle(Runner.java:75)
+	at io.cucumber.testng.TestNGCucumberRunner.lambda$runScenario$1(TestNGCucumberRunner.java:135)
+	at io.cucumber.core.runtime.CucumberExecutionContext.lambda$runTestCase$5(CucumberExecutionContext.java:136)
+	at io.cucumber.core.runtime.RethrowingThrowableCollector.executeAndThrow(RethrowingThrowableCollector.java:23)
+	at io.cucumber.core.runtime.CucumberExecutionContext.runTestCase(CucumberExecutionContext.java:136)
+	at io.cucumber.testng.TestNGCucumberRunner.runScenario(TestNGCucumberRunner.java:132)
+	at io.cucumber.testng.AbstractTestNGCucumberTests.runScenario(AbstractTestNGCucumberTests.java:35)
+	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:103)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:580)
+	at org.testng.internal.invokers.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:141)
+	at org.testng.internal.invokers.TestInvoker.invokeMethod(TestInvoker.java:686)
+	at org.testng.internal.invokers.TestInvoker.invokeTestMethod(TestInvoker.java:230)
+	at org.testng.internal.invokers.MethodRunner.runInSequence(MethodRunner.java:63)
+	at org.testng.internal.invokers.TestInvoker$MethodInvocationAgent.invoke(TestInvoker.java:992)
+	at org.testng.internal.invokers.TestInvoker.invokeTestMethods(TestInvoker.java:203)
+	at org.testng.internal.invokers.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:154)
+	at org.testng.internal.invokers.TestMethodWorker.run(TestMethodWorker.java:134)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1596)
+	at org.testng.TestRunner.privateRun(TestRunner.java:739)
+	at org.testng.TestRunner.run(TestRunner.java:614)
+	at org.testng.SuiteRunner.runTest(SuiteRunner.java:421)
+	at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:413)
+	at org.testng.SuiteRunner.privateRun(SuiteRunner.java:373)
+	at org.testng.SuiteRunner.run(SuiteRunner.java:312)
+	at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)
+	at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:95)
+	at org.testng.TestNG.runSuitesSequentially(TestNG.java:1274)
+	at org.testng.TestNG.runSuitesLocally(TestNG.java:1208)
+	at org.testng.TestNG.runSuites(TestNG.java:1112)
+	at org.testng.TestNG.run(TestNG.java:1079)
+	at com.intellij.rt.testng.IDEARemoteTestNG.run(IDEARemoteTestNG.java:65)
+	at com.intellij.rt.testng.RemoteTestNGStarter.main(RemoteTestNGStarter.java:105)
+]]>
+</failure>
+<system-out><![CDATA[
+Given user back to home page................................................passed
+When User clicks on the search bar..........................................failed
+And User search with keywords...............................................skipped
+And user clicks enter.......................................................skipped
+And User validate that search option navigation to the relevant products....skipped
+And user back to home page..................................................skipped
+And User clicks on the search bar...........................................skipped
+And User clicks on trending products........................................skipped
+And User validate that search option navigation to the relevant products....skipped
+And user back to home page..................................................skipped
+]]></system-out>
+</testcase>
+<testcase classname="Home Page Functionality" name="Verify the Home Page Functionality" time="20.384">
+<failure type="org.openqa.selenium.TimeoutException" message="Expected condition failed: waiting for visibility of element located by By.xpath: //p[contains(text(),'Home')] (tried for 20 second(s) with 500 milliseconds interval)">
+<![CDATA[org.openqa.selenium.TimeoutException: Expected condition failed: waiting for visibility of element located by By.xpath: //p[contains(text(),'Home')] (tried for 20 second(s) with 500 milliseconds interval)
+	at org.openqa.selenium.support.ui.WebDriverWait.timeoutException(WebDriverWait.java:84)
+	at org.openqa.selenium.support.ui.FluentWait.until(FluentWait.java:228)
+	at pages.BasePage.waitForVisibility(BasePage.java:39)
+	at pages.HomePage.clickOnHomeButton(HomePage.java:59)
+	at scenarios.stepDefinitions.CheckoutStep.user_is_on_the_homepage(CheckoutStep.java:49)
+	at ✽.user is on the homepage(file:///Volumes/Macintosh%20HD%20-%20Data/Code/SSB_Automation_Msite_Sanity/src/test/java/scenarios/features/homepage.feature:15)
+Caused by: org.openqa.selenium.NoSuchWindowException: no such window: target window already closed
+from unknown error: web view not found
+  (Session info: chrome=143.0.7499.110)
+Build info: version: '4.27.0', revision: 'd6e718d134'
+System info: os.name: 'Mac OS X', os.arch: 'x86_64', os.version: '26.1', java.version: '21.0.8'
+Driver info: io.appium.java_client.AppiumDriver
+Command: [4b151676-59cf-48fb-9cf8-3d6bafff8521, findElement {using=xpath, value=//p[contains(text(),'Home')]}]
+Capabilities {appium:automationName: UiAutomator2, appium:chromedriverAutodownload: true, appium:chromedriverExecutable: /Users/apple/Downloads/chro..., appium:chromedriverUseSystemExecutable: false, appium:databaseEnabled: false, appium:desired: {appActivity: com.android.chrome/com.goog..., appPackage: com.android.chrome, automationName: UiAutomator2, browserName: Chrome, chromedriverAutodownload: true, chromedriverExecutable: /Users/apple/Downloads/chro..., chromedriverUseSystemExecutable: false, ensureWebviewsHavePages: true, forceAppLaunch: true, noReset: true, platformName: ANDROID}, appium:deviceApiLevel: 33, appium:deviceManufacturer: Google, appium:deviceModel: Pixel 4a, appium:deviceName: 14081JEC202036, appium:deviceScreenDensity: 440, appium:deviceScreenSize: 1080x2340, appium:deviceUDID: 14081JEC202036, appium:ensureWebviewsHavePages: true, appium:forceAppLaunch: true, appium:javascriptEnabled: true, appium:locationContextEnabled: false, appium:networkConnectionEnabled: true, appium:noReset: true, appium:pixelRatio: 2.75, appium:platformVersion: 13, appium:statBarHeight: 136, appium:takesScreenshot: true, appium:viewportRect: {height: 2204, left: 0, top: 136, width: 1080}, appium:warnings: {}, appium:webStorageEnabled: false, browserName: Chrome, platformName: ANDROID}
+Session ID: 4b151676-59cf-48fb-9cf8-3d6bafff8521
+	at java.base/jdk.internal.reflect.DirectConstructorHandleAccessor.newInstance(DirectConstructorHandleAccessor.java:62)
+	at java.base/java.lang.reflect.Constructor.newInstanceWithCaller(Constructor.java:502)
+	at java.base/java.lang.reflect.Constructor.newInstance(Constructor.java:486)
+	at org.openqa.selenium.remote.ErrorCodec.decode(ErrorCodec.java:167)
+	at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:138)
+	at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:50)
+	at org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:190)
+	at io.appium.java_client.remote.AppiumCommandExecutor.execute(AppiumCommandExecutor.java:237)
+	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:545)
+	at org.openqa.selenium.remote.ElementLocation$ElementFinder$2.findElement(ElementLocation.java:165)
+	at org.openqa.selenium.remote.ElementLocation.findElement(ElementLocation.java:59)
+	at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:368)
+	at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:362)
+	at org.openqa.selenium.support.ui.ExpectedConditions$7.apply(ExpectedConditions.java:194)
+	at org.openqa.selenium.support.ui.ExpectedConditions$7.apply(ExpectedConditions.java:190)
+	at org.openqa.selenium.support.ui.FluentWait.until(FluentWait.java:203)
+	at pages.BasePage.waitForVisibility(BasePage.java:39)
+	at pages.HomePage.clickOnHomeButton(HomePage.java:59)
+	at scenarios.stepDefinitions.CheckoutStep.user_is_on_the_homepage(CheckoutStep.java:49)
+	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:103)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:580)
+	at io.cucumber.java.Invoker.doInvoke(Invoker.java:66)
+	at io.cucumber.java.Invoker.invoke(Invoker.java:24)
+	at io.cucumber.java.AbstractGlueDefinition.invokeMethod(AbstractGlueDefinition.java:47)
+	at io.cucumber.java.JavaStepDefinition.execute(JavaStepDefinition.java:29)
+	at io.cucumber.core.runner.CoreStepDefinition.execute(CoreStepDefinition.java:66)
+	at io.cucumber.core.runner.PickleStepDefinitionMatch.runStep(PickleStepDefinitionMatch.java:62)
+	at io.cucumber.core.runner.ExecutionMode$1.execute(ExecutionMode.java:10)
+	at io.cucumber.core.runner.TestStep.executeStep(TestStep.java:81)
+	at io.cucumber.core.runner.TestStep.run(TestStep.java:53)
+	at io.cucumber.core.runner.PickleStepTestStep.run(PickleStepTestStep.java:51)
+	at io.cucumber.core.runner.TestCase.run(TestCase.java:84)
+	at io.cucumber.core.runner.Runner.runPickle(Runner.java:75)
+	at io.cucumber.testng.TestNGCucumberRunner.lambda$runScenario$1(TestNGCucumberRunner.java:135)
+	at io.cucumber.core.runtime.CucumberExecutionContext.lambda$runTestCase$5(CucumberExecutionContext.java:136)
+	at io.cucumber.core.runtime.RethrowingThrowableCollector.executeAndThrow(RethrowingThrowableCollector.java:23)
+	at io.cucumber.core.runtime.CucumberExecutionContext.runTestCase(CucumberExecutionContext.java:136)
+	at io.cucumber.testng.TestNGCucumberRunner.runScenario(TestNGCucumberRunner.java:132)
+	at io.cucumber.testng.AbstractTestNGCucumberTests.runScenario(AbstractTestNGCucumberTests.java:35)
+	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:103)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:580)
+	at org.testng.internal.invokers.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:141)
+	at org.testng.internal.invokers.TestInvoker.invokeMethod(TestInvoker.java:686)
+	at org.testng.internal.invokers.TestInvoker.invokeTestMethod(TestInvoker.java:230)
+	at org.testng.internal.invokers.MethodRunner.runInSequence(MethodRunner.java:63)
+	at org.testng.internal.invokers.TestInvoker$MethodInvocationAgent.invoke(TestInvoker.java:992)
+	at org.testng.internal.invokers.TestInvoker.invokeTestMethods(TestInvoker.java:203)
+	at org.testng.internal.invokers.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:154)
+	at org.testng.internal.invokers.TestMethodWorker.run(TestMethodWorker.java:134)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1596)
+	at org.testng.TestRunner.privateRun(TestRunner.java:739)
+	at org.testng.TestRunner.run(TestRunner.java:614)
+	at org.testng.SuiteRunner.runTest(SuiteRunner.java:421)
+	at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:413)
+	at org.testng.SuiteRunner.privateRun(SuiteRunner.java:373)
+	at org.testng.SuiteRunner.run(SuiteRunner.java:312)
+	at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)
+	at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:95)
+	at org.testng.TestNG.runSuitesSequentially(TestNG.java:1274)
+	at org.testng.TestNG.runSuitesLocally(TestNG.java:1208)
+	at org.testng.TestNG.runSuites(TestNG.java:1112)
+	at org.testng.TestNG.run(TestNG.java:1079)
+	at com.intellij.rt.testng.IDEARemoteTestNG.run(IDEARemoteTestNG.java:65)
+	at com.intellij.rt.testng.RemoteTestNGStarter.main(RemoteTestNGStarter.java:105)
+]]>
+</failure>
+<system-out><![CDATA[
+Given user is on the homepage...............................................failed
+When user selects a makeup category from home page..........................skipped
+And user clicks the sub category eyes from makeup page......................skipped
+And user selects a product from eyes makeup plp.............................skipped
+And User validate that it navigates to the PDP..............................skipped
+]]></system-out>
+</testcase>
+<testcase classname="Home Page Functionality" name="Verify the Product Listing Page Functionality" time="40.39">
+<failure type="org.openqa.selenium.TimeoutException" message="Expected condition failed: waiting for visibility of element located by By.xpath: (//p[contains(text(),'Makeup')])[1] (tried for 20 second(s) with 500 milliseconds interval)">
+<![CDATA[org.openqa.selenium.TimeoutException: Expected condition failed: waiting for visibility of element located by By.xpath: (//p[contains(text(),'Makeup')])[1] (tried for 20 second(s) with 500 milliseconds interval)
+	at org.openqa.selenium.support.ui.WebDriverWait.timeoutException(WebDriverWait.java:84)
+	at org.openqa.selenium.support.ui.FluentWait.until(FluentWait.java:228)
+	at pages.BasePage.waitForVisibility(BasePage.java:39)
+	at pages.HomePage.clickOnMakeUp(HomePage.java:64)
+	at scenarios.stepDefinitions.CheckoutStep.user_selects_a_makeup_category_from_home_page(CheckoutStep.java:60)
+	at ✽.user selects a makeup category from home page(file:///Volumes/Macintosh%20HD%20-%20Data/Code/SSB_Automation_Msite_Sanity/src/test/java/scenarios/features/homepage.feature:25)
+Caused by: org.openqa.selenium.NoSuchWindowException: no such window: target window already closed
+from unknown error: web view not found
+  (Session info: chrome=143.0.7499.110)
+Build info: version: '4.27.0', revision: 'd6e718d134'
+System info: os.name: 'Mac OS X', os.arch: 'x86_64', os.version: '26.1', java.version: '21.0.8'
+Driver info: io.appium.java_client.AppiumDriver
+Command: [4b151676-59cf-48fb-9cf8-3d6bafff8521, findElement {using=xpath, value=(//p[contains(text(),'Makeup')])[1]}]
+Capabilities {appium:automationName: UiAutomator2, appium:chromedriverAutodownload: true, appium:chromedriverExecutable: /Users/apple/Downloads/chro..., appium:chromedriverUseSystemExecutable: false, appium:databaseEnabled: false, appium:desired: {appActivity: com.android.chrome/com.goog..., appPackage: com.android.chrome, automationName: UiAutomator2, browserName: Chrome, chromedriverAutodownload: true, chromedriverExecutable: /Users/apple/Downloads/chro..., chromedriverUseSystemExecutable: false, ensureWebviewsHavePages: true, forceAppLaunch: true, noReset: true, platformName: ANDROID}, appium:deviceApiLevel: 33, appium:deviceManufacturer: Google, appium:deviceModel: Pixel 4a, appium:deviceName: 14081JEC202036, appium:deviceScreenDensity: 440, appium:deviceScreenSize: 1080x2340, appium:deviceUDID: 14081JEC202036, appium:ensureWebviewsHavePages: true, appium:forceAppLaunch: true, appium:javascriptEnabled: true, appium:locationContextEnabled: false, appium:networkConnectionEnabled: true, appium:noReset: true, appium:pixelRatio: 2.75, appium:platformVersion: 13, appium:statBarHeight: 136, appium:takesScreenshot: true, appium:viewportRect: {height: 2204, left: 0, top: 136, width: 1080}, appium:warnings: {}, appium:webStorageEnabled: false, browserName: Chrome, platformName: ANDROID}
+Session ID: 4b151676-59cf-48fb-9cf8-3d6bafff8521
+	at java.base/jdk.internal.reflect.DirectConstructorHandleAccessor.newInstance(DirectConstructorHandleAccessor.java:62)
+	at java.base/java.lang.reflect.Constructor.newInstanceWithCaller(Constructor.java:502)
+	at java.base/java.lang.reflect.Constructor.newInstance(Constructor.java:486)
+	at org.openqa.selenium.remote.ErrorCodec.decode(ErrorCodec.java:167)
+	at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:138)
+	at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:50)
+	at org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:190)
+	at io.appium.java_client.remote.AppiumCommandExecutor.execute(AppiumCommandExecutor.java:237)
+	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:545)
+	at org.openqa.selenium.remote.ElementLocation$ElementFinder$2.findElement(ElementLocation.java:165)
+	at org.openqa.selenium.remote.ElementLocation.findElement(ElementLocation.java:59)
+	at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:368)
+	at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:362)
+	at org.openqa.selenium.support.ui.ExpectedConditions$7.apply(ExpectedConditions.java:194)
+	at org.openqa.selenium.support.ui.ExpectedConditions$7.apply(ExpectedConditions.java:190)
+	at org.openqa.selenium.support.ui.FluentWait.until(FluentWait.java:203)
+	at pages.BasePage.waitForVisibility(BasePage.java:39)
+	at pages.HomePage.clickOnMakeUp(HomePage.java:64)
+	at scenarios.stepDefinitions.CheckoutStep.user_selects_a_makeup_category_from_home_page(CheckoutStep.java:60)
+	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:103)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:580)
+	at io.cucumber.java.Invoker.doInvoke(Invoker.java:66)
+	at io.cucumber.java.Invoker.invoke(Invoker.java:24)
+	at io.cucumber.java.AbstractGlueDefinition.invokeMethod(AbstractGlueDefinition.java:47)
+	at io.cucumber.java.JavaStepDefinition.execute(JavaStepDefinition.java:29)
+	at io.cucumber.core.runner.CoreStepDefinition.execute(CoreStepDefinition.java:66)
+	at io.cucumber.core.runner.PickleStepDefinitionMatch.runStep(PickleStepDefinitionMatch.java:62)
+	at io.cucumber.core.runner.ExecutionMode$1.execute(ExecutionMode.java:10)
+	at io.cucumber.core.runner.TestStep.executeStep(TestStep.java:81)
+	at io.cucumber.core.runner.TestStep.run(TestStep.java:53)
+	at io.cucumber.core.runner.PickleStepTestStep.run(PickleStepTestStep.java:51)
+	at io.cucumber.core.runner.TestCase.run(TestCase.java:84)
+	at io.cucumber.core.runner.Runner.runPickle(Runner.java:75)
+	at io.cucumber.testng.TestNGCucumberRunner.lambda$runScenario$1(TestNGCucumberRunner.java:135)
+	at io.cucumber.core.runtime.CucumberExecutionContext.lambda$runTestCase$5(CucumberExecutionContext.java:136)
+	at io.cucumber.core.runtime.RethrowingThrowableCollector.executeAndThrow(RethrowingThrowableCollector.java:23)
+	at io.cucumber.core.runtime.CucumberExecutionContext.runTestCase(CucumberExecutionContext.java:136)
+	at io.cucumber.testng.TestNGCucumberRunner.runScenario(TestNGCucumberRunner.java:132)
+	at io.cucumber.testng.AbstractTestNGCucumberTests.runScenario(AbstractTestNGCucumberTests.java:35)
+	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:103)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:580)
+	at org.testng.internal.invokers.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:141)
+	at org.testng.internal.invokers.TestInvoker.invokeMethod(TestInvoker.java:686)
+	at org.testng.internal.invokers.TestInvoker.invokeTestMethod(TestInvoker.java:230)
+	at org.testng.internal.invokers.MethodRunner.runInSequence(MethodRunner.java:63)
+	at org.testng.internal.invokers.TestInvoker$MethodInvocationAgent.invoke(TestInvoker.java:992)
+	at org.testng.internal.invokers.TestInvoker.invokeTestMethods(TestInvoker.java:203)
+	at org.testng.internal.invokers.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:154)
+	at org.testng.internal.invokers.TestMethodWorker.run(TestMethodWorker.java:134)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1596)
+	at org.testng.TestRunner.privateRun(TestRunner.java:739)
+	at org.testng.TestRunner.run(TestRunner.java:614)
+	at org.testng.SuiteRunner.runTest(SuiteRunner.java:421)
+	at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:413)
+	at org.testng.SuiteRunner.privateRun(SuiteRunner.java:373)
+	at org.testng.SuiteRunner.run(SuiteRunner.java:312)
+	at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)
+	at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:95)
+	at org.testng.TestNG.runSuitesSequentially(TestNG.java:1274)
+	at org.testng.TestNG.runSuitesLocally(TestNG.java:1208)
+	at org.testng.TestNG.runSuites(TestNG.java:1112)
+	at org.testng.TestNG.run(TestNG.java:1079)
+	at com.intellij.rt.testng.IDEARemoteTestNG.run(IDEARemoteTestNG.java:65)
+	at com.intellij.rt.testng.RemoteTestNGStarter.main(RemoteTestNGStarter.java:105)
+]]>
+</failure>
+<system-out><![CDATA[
+Given user back to home page................................................passed
+When user selects a makeup category from home page..........................failed
+And user clicks the sub category eyes from makeup page......................skipped
+And User adds a product to the wishlist from PLP............................skipped
+And User validate that product added to wishlist............................skipped
+And User remove a product to the wishlist from PLP..........................skipped
+And user removes a product to the wishlist..................................skipped
+And User validate that product removed from wishlist........................skipped
+And user selects a product from eyes makeup plp.............................skipped
+And User validate that it navigates to the PDP..............................skipped
+And user back to home page..................................................skipped
+]]></system-out>
+</testcase>
+<testcase classname="Home Page Functionality" name="Verify the Sort Functionality" time="20.358">
+<failure type="org.openqa.selenium.TimeoutException" message="Expected condition failed: waiting for visibility of element located by By.xpath: (//p[contains(text(),'Makeup')])[1] (tried for 20 second(s) with 500 milliseconds interval)">
+<![CDATA[org.openqa.selenium.TimeoutException: Expected condition failed: waiting for visibility of element located by By.xpath: (//p[contains(text(),'Makeup')])[1] (tried for 20 second(s) with 500 milliseconds interval)
+	at org.openqa.selenium.support.ui.WebDriverWait.timeoutException(WebDriverWait.java:84)
+	at org.openqa.selenium.support.ui.FluentWait.until(FluentWait.java:228)
+	at pages.BasePage.waitForVisibility(BasePage.java:39)
+	at pages.HomePage.clickOnMakeUp(HomePage.java:64)
+	at scenarios.stepDefinitions.CheckoutStep.user_selects_a_makeup_category_from_home_page(CheckoutStep.java:60)
+	at ✽.user selects a makeup category from home page(file:///Volumes/Macintosh%20HD%20-%20Data/Code/SSB_Automation_Msite_Sanity/src/test/java/scenarios/features/homepage.feature:39)
+Caused by: org.openqa.selenium.NoSuchWindowException: no such window: target window already closed
+from unknown error: web view not found
+  (Session info: chrome=143.0.7499.110)
+Build info: version: '4.27.0', revision: 'd6e718d134'
+System info: os.name: 'Mac OS X', os.arch: 'x86_64', os.version: '26.1', java.version: '21.0.8'
+Driver info: io.appium.java_client.AppiumDriver
+Command: [4b151676-59cf-48fb-9cf8-3d6bafff8521, findElement {using=xpath, value=(//p[contains(text(),'Makeup')])[1]}]
+Capabilities {appium:automationName: UiAutomator2, appium:chromedriverAutodownload: true, appium:chromedriverExecutable: /Users/apple/Downloads/chro..., appium:chromedriverUseSystemExecutable: false, appium:databaseEnabled: false, appium:desired: {appActivity: com.android.chrome/com.goog..., appPackage: com.android.chrome, automationName: UiAutomator2, browserName: Chrome, chromedriverAutodownload: true, chromedriverExecutable: /Users/apple/Downloads/chro..., chromedriverUseSystemExecutable: false, ensureWebviewsHavePages: true, forceAppLaunch: true, noReset: true, platformName: ANDROID}, appium:deviceApiLevel: 33, appium:deviceManufacturer: Google, appium:deviceModel: Pixel 4a, appium:deviceName: 14081JEC202036, appium:deviceScreenDensity: 440, appium:deviceScreenSize: 1080x2340, appium:deviceUDID: 14081JEC202036, appium:ensureWebviewsHavePages: true, appium:forceAppLaunch: true, appium:javascriptEnabled: true, appium:locationContextEnabled: false, appium:networkConnectionEnabled: true, appium:noReset: true, appium:pixelRatio: 2.75, appium:platformVersion: 13, appium:statBarHeight: 136, appium:takesScreenshot: true, appium:viewportRect: {height: 2204, left: 0, top: 136, width: 1080}, appium:warnings: {}, appium:webStorageEnabled: false, browserName: Chrome, platformName: ANDROID}
+Session ID: 4b151676-59cf-48fb-9cf8-3d6bafff8521
+	at java.base/jdk.internal.reflect.DirectConstructorHandleAccessor.newInstance(DirectConstructorHandleAccessor.java:62)
+	at java.base/java.lang.reflect.Constructor.newInstanceWithCaller(Constructor.java:502)
+	at java.base/java.lang.reflect.Constructor.newInstance(Constructor.java:486)
+	at org.openqa.selenium.remote.ErrorCodec.decode(ErrorCodec.java:167)
+	at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:138)
+	at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:50)
+	at org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:190)
+	at io.appium.java_client.remote.AppiumCommandExecutor.execute(AppiumCommandExecutor.java:237)
+	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:545)
+	at org.openqa.selenium.remote.ElementLocation$ElementFinder$2.findElement(ElementLocation.java:165)
+	at org.openqa.selenium.remote.ElementLocation.findElement(ElementLocation.java:59)
+	at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:368)
+	at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:362)
+	at org.openqa.selenium.support.ui.ExpectedConditions$7.apply(ExpectedConditions.java:194)
+	at org.openqa.selenium.support.ui.ExpectedConditions$7.apply(ExpectedConditions.java:190)
+	at org.openqa.selenium.support.ui.FluentWait.until(FluentWait.java:203)
+	at pages.BasePage.waitForVisibility(BasePage.java:39)
+	at pages.HomePage.clickOnMakeUp(HomePage.java:64)
+	at scenarios.stepDefinitions.CheckoutStep.user_selects_a_makeup_category_from_home_page(CheckoutStep.java:60)
+	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:103)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:580)
+	at io.cucumber.java.Invoker.doInvoke(Invoker.java:66)
+	at io.cucumber.java.Invoker.invoke(Invoker.java:24)
+	at io.cucumber.java.AbstractGlueDefinition.invokeMethod(AbstractGlueDefinition.java:47)
+	at io.cucumber.java.JavaStepDefinition.execute(JavaStepDefinition.java:29)
+	at io.cucumber.core.runner.CoreStepDefinition.execute(CoreStepDefinition.java:66)
+	at io.cucumber.core.runner.PickleStepDefinitionMatch.runStep(PickleStepDefinitionMatch.java:62)
+	at io.cucumber.core.runner.ExecutionMode$1.execute(ExecutionMode.java:10)
+	at io.cucumber.core.runner.TestStep.executeStep(TestStep.java:81)
+	at io.cucumber.core.runner.TestStep.run(TestStep.java:53)
+	at io.cucumber.core.runner.PickleStepTestStep.run(PickleStepTestStep.java:51)
+	at io.cucumber.core.runner.TestCase.run(TestCase.java:84)
+	at io.cucumber.core.runner.Runner.runPickle(Runner.java:75)
+	at io.cucumber.testng.TestNGCucumberRunner.lambda$runScenario$1(TestNGCucumberRunner.java:135)
+	at io.cucumber.core.runtime.CucumberExecutionContext.lambda$runTestCase$5(CucumberExecutionContext.java:136)
+	at io.cucumber.core.runtime.RethrowingThrowableCollector.executeAndThrow(RethrowingThrowableCollector.java:23)
+	at io.cucumber.core.runtime.CucumberExecutionContext.runTestCase(CucumberExecutionContext.java:136)
+	at io.cucumber.testng.TestNGCucumberRunner.runScenario(TestNGCucumberRunner.java:132)
+	at io.cucumber.testng.AbstractTestNGCucumberTests.runScenario(AbstractTestNGCucumberTests.java:35)
+	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:103)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:580)
+	at org.testng.internal.invokers.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:141)
+	at org.testng.internal.invokers.TestInvoker.invokeMethod(TestInvoker.java:686)
+	at org.testng.internal.invokers.TestInvoker.invokeTestMethod(TestInvoker.java:230)
+	at org.testng.internal.invokers.MethodRunner.runInSequence(MethodRunner.java:63)
+	at org.testng.internal.invokers.TestInvoker$MethodInvocationAgent.invoke(TestInvoker.java:992)
+	at org.testng.internal.invokers.TestInvoker.invokeTestMethods(TestInvoker.java:203)
+	at org.testng.internal.invokers.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:154)
+	at org.testng.internal.invokers.TestMethodWorker.run(TestMethodWorker.java:134)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1596)
+	at org.testng.TestRunner.privateRun(TestRunner.java:739)
+	at org.testng.TestRunner.run(TestRunner.java:614)
+	at org.testng.SuiteRunner.runTest(SuiteRunner.java:421)
+	at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:413)
+	at org.testng.SuiteRunner.privateRun(SuiteRunner.java:373)
+	at org.testng.SuiteRunner.run(SuiteRunner.java:312)
+	at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)
+	at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:95)
+	at org.testng.TestNG.runSuitesSequentially(TestNG.java:1274)
+	at org.testng.TestNG.runSuitesLocally(TestNG.java:1208)
+	at org.testng.TestNG.runSuites(TestNG.java:1112)
+	at org.testng.TestNG.run(TestNG.java:1079)
+	at com.intellij.rt.testng.IDEARemoteTestNG.run(IDEARemoteTestNG.java:65)
+	at com.intellij.rt.testng.RemoteTestNGStarter.main(RemoteTestNGStarter.java:105)
+]]>
+</failure>
+<system-out><![CDATA[
+When user selects a makeup category from home page..........................failed
+And user clicks the sub category eyes from makeup page......................skipped
+Then User clicks on the sort option.........................................skipped
+And User selects a sort option as price low to high.........................skipped
+And User validate that product sorted product is displayed..................skipped
+Then User clicks on the sort option.........................................skipped
+And User selects a sort option as price high to low.........................skipped
+And User validate that product sorted product is displayed..................skipped
+]]></system-out>
+</testcase>
+<testcase classname="Home Page Functionality" name="Verify the Filter Functionality" time="40.397">
+<failure type="org.openqa.selenium.TimeoutException" message="Expected condition failed: waiting for visibility of element located by By.xpath: //p[contains(text(),'Home')] (tried for 20 second(s) with 500 milliseconds interval)">
+<![CDATA[org.openqa.selenium.TimeoutException: Expected condition failed: waiting for visibility of element located by By.xpath: //p[contains(text(),'Home')] (tried for 20 second(s) with 500 milliseconds interval)
+	at org.openqa.selenium.support.ui.WebDriverWait.timeoutException(WebDriverWait.java:84)
+	at org.openqa.selenium.support.ui.FluentWait.until(FluentWait.java:228)
+	at pages.BasePage.waitForVisibility(BasePage.java:39)
+	at pages.HomePage.clickOnHomeButton(HomePage.java:59)
+	at scenarios.stepDefinitions.CheckoutStep.user_is_on_the_homepage(CheckoutStep.java:49)
+	at ✽.user is on the homepage(file:///Volumes/Macintosh%20HD%20-%20Data/Code/SSB_Automation_Msite_Sanity/src/test/java/scenarios/features/homepage.feature:51)
+Caused by: org.openqa.selenium.NoSuchWindowException: no such window: target window already closed
+from unknown error: web view not found
+  (Session info: chrome=143.0.7499.110)
+Build info: version: '4.27.0', revision: 'd6e718d134'
+System info: os.name: 'Mac OS X', os.arch: 'x86_64', os.version: '26.1', java.version: '21.0.8'
+Driver info: io.appium.java_client.AppiumDriver
+Command: [4b151676-59cf-48fb-9cf8-3d6bafff8521, findElement {using=xpath, value=//p[contains(text(),'Home')]}]
+Capabilities {appium:automationName: UiAutomator2, appium:chromedriverAutodownload: true, appium:chromedriverExecutable: /Users/apple/Downloads/chro..., appium:chromedriverUseSystemExecutable: false, appium:databaseEnabled: false, appium:desired: {appActivity: com.android.chrome/com.goog..., appPackage: com.android.chrome, automationName: UiAutomator2, browserName: Chrome, chromedriverAutodownload: true, chromedriverExecutable: /Users/apple/Downloads/chro..., chromedriverUseSystemExecutable: false, ensureWebviewsHavePages: true, forceAppLaunch: true, noReset: true, platformName: ANDROID}, appium:deviceApiLevel: 33, appium:deviceManufacturer: Google, appium:deviceModel: Pixel 4a, appium:deviceName: 14081JEC202036, appium:deviceScreenDensity: 440, appium:deviceScreenSize: 1080x2340, appium:deviceUDID: 14081JEC202036, appium:ensureWebviewsHavePages: true, appium:forceAppLaunch: true, appium:javascriptEnabled: true, appium:locationContextEnabled: false, appium:networkConnectionEnabled: true, appium:noReset: true, appium:pixelRatio: 2.75, appium:platformVersion: 13, appium:statBarHeight: 136, appium:takesScreenshot: true, appium:viewportRect: {height: 2204, left: 0, top: 136, width: 1080}, appium:warnings: {}, appium:webStorageEnabled: false, browserName: Chrome, platformName: ANDROID}
+Session ID: 4b151676-59cf-48fb-9cf8-3d6bafff8521
+	at java.base/jdk.internal.reflect.DirectConstructorHandleAccessor.newInstance(DirectConstructorHandleAccessor.java:62)
+	at java.base/java.lang.reflect.Constructor.newInstanceWithCaller(Constructor.java:502)
+	at java.base/java.lang.reflect.Constructor.newInstance(Constructor.java:486)
+	at org.openqa.selenium.remote.ErrorCodec.decode(ErrorCodec.java:167)
+	at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:138)
+	at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:50)
+	at org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:190)
+	at io.appium.java_client.remote.AppiumCommandExecutor.execute(AppiumCommandExecutor.java:237)
+	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:545)
+	at org.openqa.selenium.remote.ElementLocation$ElementFinder$2.findElement(ElementLocation.java:165)
+	at org.openqa.selenium.remote.ElementLocation.findElement(ElementLocation.java:59)
+	at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:368)
+	at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:362)
+	at org.openqa.selenium.support.ui.ExpectedConditions$7.apply(ExpectedConditions.java:194)
+	at org.openqa.selenium.support.ui.ExpectedConditions$7.apply(ExpectedConditions.java:190)
+	at org.openqa.selenium.support.ui.FluentWait.until(FluentWait.java:203)
+	at pages.BasePage.waitForVisibility(BasePage.java:39)
+	at pages.HomePage.clickOnHomeButton(HomePage.java:59)
+	at scenarios.stepDefinitions.CheckoutStep.user_is_on_the_homepage(CheckoutStep.java:49)
+	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:103)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:580)
+	at io.cucumber.java.Invoker.doInvoke(Invoker.java:66)
+	at io.cucumber.java.Invoker.invoke(Invoker.java:24)
+	at io.cucumber.java.AbstractGlueDefinition.invokeMethod(AbstractGlueDefinition.java:47)
+	at io.cucumber.java.JavaStepDefinition.execute(JavaStepDefinition.java:29)
+	at io.cucumber.core.runner.CoreStepDefinition.execute(CoreStepDefinition.java:66)
+	at io.cucumber.core.runner.PickleStepDefinitionMatch.runStep(PickleStepDefinitionMatch.java:62)
+	at io.cucumber.core.runner.ExecutionMode$1.execute(ExecutionMode.java:10)
+	at io.cucumber.core.runner.TestStep.executeStep(TestStep.java:81)
+	at io.cucumber.core.runner.TestStep.run(TestStep.java:53)
+	at io.cucumber.core.runner.PickleStepTestStep.run(PickleStepTestStep.java:51)
+	at io.cucumber.core.runner.TestCase.run(TestCase.java:84)
+	at io.cucumber.core.runner.Runner.runPickle(Runner.java:75)
+	at io.cucumber.testng.TestNGCucumberRunner.lambda$runScenario$1(TestNGCucumberRunner.java:135)
+	at io.cucumber.core.runtime.CucumberExecutionContext.lambda$runTestCase$5(CucumberExecutionContext.java:136)
+	at io.cucumber.core.runtime.RethrowingThrowableCollector.executeAndThrow(RethrowingThrowableCollector.java:23)
+	at io.cucumber.core.runtime.CucumberExecutionContext.runTestCase(CucumberExecutionContext.java:136)
+	at io.cucumber.testng.TestNGCucumberRunner.runScenario(TestNGCucumberRunner.java:132)
+	at io.cucumber.testng.AbstractTestNGCucumberTests.runScenario(AbstractTestNGCucumberTests.java:35)
+	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:103)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:580)
+	at org.testng.internal.invokers.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:141)
+	at org.testng.internal.invokers.TestInvoker.invokeMethod(TestInvoker.java:686)
+	at org.testng.internal.invokers.TestInvoker.invokeTestMethod(TestInvoker.java:230)
+	at org.testng.internal.invokers.MethodRunner.runInSequence(MethodRunner.java:63)
+	at org.testng.internal.invokers.TestInvoker$MethodInvocationAgent.invoke(TestInvoker.java:992)
+	at org.testng.internal.invokers.TestInvoker.invokeTestMethods(TestInvoker.java:203)
+	at org.testng.internal.invokers.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:154)
+	at org.testng.internal.invokers.TestMethodWorker.run(TestMethodWorker.java:134)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1596)
+	at org.testng.TestRunner.privateRun(TestRunner.java:739)
+	at org.testng.TestRunner.run(TestRunner.java:614)
+	at org.testng.SuiteRunner.runTest(SuiteRunner.java:421)
+	at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:413)
+	at org.testng.SuiteRunner.privateRun(SuiteRunner.java:373)
+	at org.testng.SuiteRunner.run(SuiteRunner.java:312)
+	at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)
+	at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:95)
+	at org.testng.TestNG.runSuitesSequentially(TestNG.java:1274)
+	at org.testng.TestNG.runSuitesLocally(TestNG.java:1208)
+	at org.testng.TestNG.runSuites(TestNG.java:1112)
+	at org.testng.TestNG.run(TestNG.java:1079)
+	at com.intellij.rt.testng.IDEARemoteTestNG.run(IDEARemoteTestNG.java:65)
+	at com.intellij.rt.testng.RemoteTestNGStarter.main(RemoteTestNGStarter.java:105)
+]]>
+</failure>
+<system-out><![CDATA[
+Given user back to home page................................................passed
+Given user is on the homepage...............................................failed
+When user selects a makeup category from home page..........................skipped
+And user clicks the sub category eyes from makeup page......................skipped
+And User clicks on the filter option........................................skipped
+And User select the category as makeup......................................skipped
+And User selects the brands as bobbi........................................skipped
+And User clicks on the apply filter.........................................skipped
+And User validate that products are displayed as per filter.................skipped
+Then User clicks on the filter option.......................................skipped
+And User select the category as makeup......................................skipped
+And User selects the brands as bobbi........................................skipped
+And User clicks on the apply filter.........................................skipped
+And user validates that filter has removed..................................skipped
+]]></system-out>
+</testcase>
+<testcase classname="Home Page Functionality" name="Verify functionality of invalid postal code check on the PDP" time="40.376">
+<failure type="org.openqa.selenium.TimeoutException" message="Expected condition failed: waiting for visibility of element located by By.xpath: //p[contains(text(),'Home')] (tried for 20 second(s) with 500 milliseconds interval)">
+<![CDATA[org.openqa.selenium.TimeoutException: Expected condition failed: waiting for visibility of element located by By.xpath: //p[contains(text(),'Home')] (tried for 20 second(s) with 500 milliseconds interval)
+	at org.openqa.selenium.support.ui.WebDriverWait.timeoutException(WebDriverWait.java:84)
+	at org.openqa.selenium.support.ui.FluentWait.until(FluentWait.java:228)
+	at pages.BasePage.waitForVisibility(BasePage.java:39)
+	at pages.HomePage.clickOnHomeButton(HomePage.java:59)
+	at scenarios.stepDefinitions.CheckoutStep.user_is_on_the_homepage(CheckoutStep.java:49)
+	at ✽.user is on the homepage(file:///Volumes/Macintosh%20HD%20-%20Data/Code/SSB_Automation_Msite_Sanity/src/test/java/scenarios/features/homepage.feature:68)
+Caused by: org.openqa.selenium.NoSuchWindowException: no such window: target window already closed
+from unknown error: web view not found
+  (Session info: chrome=143.0.7499.110)
+Build info: version: '4.27.0', revision: 'd6e718d134'
+System info: os.name: 'Mac OS X', os.arch: 'x86_64', os.version: '26.1', java.version: '21.0.8'
+Driver info: io.appium.java_client.AppiumDriver
+Command: [4b151676-59cf-48fb-9cf8-3d6bafff8521, findElement {using=xpath, value=//p[contains(text(),'Home')]}]
+Capabilities {appium:automationName: UiAutomator2, appium:chromedriverAutodownload: true, appium:chromedriverExecutable: /Users/apple/Downloads/chro..., appium:chromedriverUseSystemExecutable: false, appium:databaseEnabled: false, appium:desired: {appActivity: com.android.chrome/com.goog..., appPackage: com.android.chrome, automationName: UiAutomator2, browserName: Chrome, chromedriverAutodownload: true, chromedriverExecutable: /Users/apple/Downloads/chro..., chromedriverUseSystemExecutable: false, ensureWebviewsHavePages: true, forceAppLaunch: true, noReset: true, platformName: ANDROID}, appium:deviceApiLevel: 33, appium:deviceManufacturer: Google, appium:deviceModel: Pixel 4a, appium:deviceName: 14081JEC202036, appium:deviceScreenDensity: 440, appium:deviceScreenSize: 1080x2340, appium:deviceUDID: 14081JEC202036, appium:ensureWebviewsHavePages: true, appium:forceAppLaunch: true, appium:javascriptEnabled: true, appium:locationContextEnabled: false, appium:networkConnectionEnabled: true, appium:noReset: true, appium:pixelRatio: 2.75, appium:platformVersion: 13, appium:statBarHeight: 136, appium:takesScreenshot: true, appium:viewportRect: {height: 2204, left: 0, top: 136, width: 1080}, appium:warnings: {}, appium:webStorageEnabled: false, browserName: Chrome, platformName: ANDROID}
+Session ID: 4b151676-59cf-48fb-9cf8-3d6bafff8521
+	at java.base/jdk.internal.reflect.DirectConstructorHandleAccessor.newInstance(DirectConstructorHandleAccessor.java:62)
+	at java.base/java.lang.reflect.Constructor.newInstanceWithCaller(Constructor.java:502)
+	at java.base/java.lang.reflect.Constructor.newInstance(Constructor.java:486)
+	at org.openqa.selenium.remote.ErrorCodec.decode(ErrorCodec.java:167)
+	at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:138)
+	at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:50)
+	at org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:190)
+	at io.appium.java_client.remote.AppiumCommandExecutor.execute(AppiumCommandExecutor.java:237)
+	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:545)
+	at org.openqa.selenium.remote.ElementLocation$ElementFinder$2.findElement(ElementLocation.java:165)
+	at org.openqa.selenium.remote.ElementLocation.findElement(ElementLocation.java:59)
+	at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:368)
+	at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:362)
+	at org.openqa.selenium.support.ui.ExpectedConditions$7.apply(ExpectedConditions.java:194)
+	at org.openqa.selenium.support.ui.ExpectedConditions$7.apply(ExpectedConditions.java:190)
+	at org.openqa.selenium.support.ui.FluentWait.until(FluentWait.java:203)
+	at pages.BasePage.waitForVisibility(BasePage.java:39)
+	at pages.HomePage.clickOnHomeButton(HomePage.java:59)
+	at scenarios.stepDefinitions.CheckoutStep.user_is_on_the_homepage(CheckoutStep.java:49)
+	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:103)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:580)
+	at io.cucumber.java.Invoker.doInvoke(Invoker.java:66)
+	at io.cucumber.java.Invoker.invoke(Invoker.java:24)
+	at io.cucumber.java.AbstractGlueDefinition.invokeMethod(AbstractGlueDefinition.java:47)
+	at io.cucumber.java.JavaStepDefinition.execute(JavaStepDefinition.java:29)
+	at io.cucumber.core.runner.CoreStepDefinition.execute(CoreStepDefinition.java:66)
+	at io.cucumber.core.runner.PickleStepDefinitionMatch.runStep(PickleStepDefinitionMatch.java:62)
+	at io.cucumber.core.runner.ExecutionMode$1.execute(ExecutionMode.java:10)
+	at io.cucumber.core.runner.TestStep.executeStep(TestStep.java:81)
+	at io.cucumber.core.runner.TestStep.run(TestStep.java:53)
+	at io.cucumber.core.runner.PickleStepTestStep.run(PickleStepTestStep.java:51)
+	at io.cucumber.core.runner.TestCase.run(TestCase.java:84)
+	at io.cucumber.core.runner.Runner.runPickle(Runner.java:75)
+	at io.cucumber.testng.TestNGCucumberRunner.lambda$runScenario$1(TestNGCucumberRunner.java:135)
+	at io.cucumber.core.runtime.CucumberExecutionContext.lambda$runTestCase$5(CucumberExecutionContext.java:136)
+	at io.cucumber.core.runtime.RethrowingThrowableCollector.executeAndThrow(RethrowingThrowableCollector.java:23)
+	at io.cucumber.core.runtime.CucumberExecutionContext.runTestCase(CucumberExecutionContext.java:136)
+	at io.cucumber.testng.TestNGCucumberRunner.runScenario(TestNGCucumberRunner.java:132)
+	at io.cucumber.testng.AbstractTestNGCucumberTests.runScenario(AbstractTestNGCucumberTests.java:35)
+	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:103)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:580)
+	at org.testng.internal.invokers.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:141)
+	at org.testng.internal.invokers.TestInvoker.invokeMethod(TestInvoker.java:686)
+	at org.testng.internal.invokers.TestInvoker.invokeTestMethod(TestInvoker.java:230)
+	at org.testng.internal.invokers.MethodRunner.runInSequence(MethodRunner.java:63)
+	at org.testng.internal.invokers.TestInvoker$MethodInvocationAgent.invoke(TestInvoker.java:992)
+	at org.testng.internal.invokers.TestInvoker.invokeTestMethods(TestInvoker.java:203)
+	at org.testng.internal.invokers.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:154)
+	at org.testng.internal.invokers.TestMethodWorker.run(TestMethodWorker.java:134)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1596)
+	at org.testng.TestRunner.privateRun(TestRunner.java:739)
+	at org.testng.TestRunner.run(TestRunner.java:614)
+	at org.testng.SuiteRunner.runTest(SuiteRunner.java:421)
+	at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:413)
+	at org.testng.SuiteRunner.privateRun(SuiteRunner.java:373)
+	at org.testng.SuiteRunner.run(SuiteRunner.java:312)
+	at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)
+	at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:95)
+	at org.testng.TestNG.runSuitesSequentially(TestNG.java:1274)
+	at org.testng.TestNG.runSuitesLocally(TestNG.java:1208)
+	at org.testng.TestNG.runSuites(TestNG.java:1112)
+	at org.testng.TestNG.run(TestNG.java:1079)
+	at com.intellij.rt.testng.IDEARemoteTestNG.run(IDEARemoteTestNG.java:65)
+	at com.intellij.rt.testng.RemoteTestNGStarter.main(RemoteTestNGStarter.java:105)
+]]>
+</failure>
+<system-out><![CDATA[
+Given user back to home page................................................passed
+Given user is on the homepage...............................................failed
+When user selects a makeup category from home page..........................skipped
+And user clicks the sub category from makeup page...........................skipped
+And user selects a product from makeup plp..................................skipped
+And user clicks on the change option........................................skipped
+When user enters an invalid postal code for delivery........................skipped
+And user clicks on the check option.........................................skipped
+And user sees a message indicating to enter a valid postal code.............skipped
+]]></system-out>
+</testcase>
+<testcase classname="Home Page Functionality" name="Verify functionality of valid postal code check on the PDP" time="0.026">
+<failure type="org.openqa.selenium.NoSuchWindowException" message="no such window: target window already closed
+from unknown error: web view not found
+  (Session info: chrome=143.0.7499.110)
+Build info: version: '4.27.0', revision: 'd6e718d134'
+System info: os.name: 'Mac OS X', os.arch: 'x86_64', os.version: '26.1', java.version: '21.0.8'
+Driver info: io.appium.java_client.AppiumDriver
+Command: [4b151676-59cf-48fb-9cf8-3d6bafff8521, getCurrentWindowSize {}]
+Capabilities {appium:automationName: UiAutomator2, appium:chromedriverAutodownload: true, appium:chromedriverExecutable: /Users/apple/Downloads/chro..., appium:chromedriverUseSystemExecutable: false, appium:databaseEnabled: false, appium:desired: {appActivity: com.android.chrome/com.goog..., appPackage: com.android.chrome, automationName: UiAutomator2, browserName: Chrome, chromedriverAutodownload: true, chromedriverExecutable: /Users/apple/Downloads/chro..., chromedriverUseSystemExecutable: false, ensureWebviewsHavePages: true, forceAppLaunch: true, noReset: true, platformName: ANDROID}, appium:deviceApiLevel: 33, appium:deviceManufacturer: Google, appium:deviceModel: Pixel 4a, appium:deviceName: 14081JEC202036, appium:deviceScreenDensity: 440, appium:deviceScreenSize: 1080x2340, appium:deviceUDID: 14081JEC202036, appium:ensureWebviewsHavePages: true, appium:forceAppLaunch: true, appium:javascriptEnabled: true, appium:locationContextEnabled: false, appium:networkConnectionEnabled: true, appium:noReset: true, appium:pixelRatio: 2.75, appium:platformVersion: 13, appium:statBarHeight: 136, appium:takesScreenshot: true, appium:viewportRect: {height: 2204, left: 0, top: 136, width: 1080}, appium:warnings: {}, appium:webStorageEnabled: false, browserName: Chrome, platformName: ANDROID}
+Session ID: 4b151676-59cf-48fb-9cf8-3d6bafff8521">
+<![CDATA[org.openqa.selenium.NoSuchWindowException: no such window: target window already closed
+from unknown error: web view not found
+  (Session info: chrome=143.0.7499.110)
+Build info: version: '4.27.0', revision: 'd6e718d134'
+System info: os.name: 'Mac OS X', os.arch: 'x86_64', os.version: '26.1', java.version: '21.0.8'
+Driver info: io.appium.java_client.AppiumDriver
+Command: [4b151676-59cf-48fb-9cf8-3d6bafff8521, getCurrentWindowSize {}]
+Capabilities {appium:automationName: UiAutomator2, appium:chromedriverAutodownload: true, appium:chromedriverExecutable: /Users/apple/Downloads/chro..., appium:chromedriverUseSystemExecutable: false, appium:databaseEnabled: false, appium:desired: {appActivity: com.android.chrome/com.goog..., appPackage: com.android.chrome, automationName: UiAutomator2, browserName: Chrome, chromedriverAutodownload: true, chromedriverExecutable: /Users/apple/Downloads/chro..., chromedriverUseSystemExecutable: false, ensureWebviewsHavePages: true, forceAppLaunch: true, noReset: true, platformName: ANDROID}, appium:deviceApiLevel: 33, appium:deviceManufacturer: Google, appium:deviceModel: Pixel 4a, appium:deviceName: 14081JEC202036, appium:deviceScreenDensity: 440, appium:deviceScreenSize: 1080x2340, appium:deviceUDID: 14081JEC202036, appium:ensureWebviewsHavePages: true, appium:forceAppLaunch: true, appium:javascriptEnabled: true, appium:locationContextEnabled: false, appium:networkConnectionEnabled: true, appium:noReset: true, appium:pixelRatio: 2.75, appium:platformVersion: 13, appium:statBarHeight: 136, appium:takesScreenshot: true, appium:viewportRect: {height: 2204, left: 0, top: 136, width: 1080}, appium:warnings: {}, appium:webStorageEnabled: false, browserName: Chrome, platformName: ANDROID}
+Session ID: 4b151676-59cf-48fb-9cf8-3d6bafff8521
+	at java.base/jdk.internal.reflect.DirectConstructorHandleAccessor.newInstance(DirectConstructorHandleAccessor.java:62)
+	at java.base/java.lang.reflect.Constructor.newInstanceWithCaller(Constructor.java:502)
+	at java.base/java.lang.reflect.Constructor.newInstance(Constructor.java:486)
+	at org.openqa.selenium.remote.ErrorCodec.decode(ErrorCodec.java:167)
+	at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:138)
+	at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:50)
+	at org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:190)
+	at io.appium.java_client.remote.AppiumCommandExecutor.execute(AppiumCommandExecutor.java:237)
+	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:545)
+	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:618)
+	at io.appium.java_client.AppiumDriver.execute(AppiumDriver.java:310)
+	at org.openqa.selenium.remote.RemoteWebDriver$RemoteWebDriverOptions$RemoteWindow.getSize(RemoteWebDriver.java:1027)
+	at pages.BasePage.scroll(BasePage.java:254)
+	at pages.HomePage.enterPostalCode(HomePage.java:166)
+	at scenarios.stepDefinitions.HomeStep.user_enters_an_valid_postal_code_for_delivery(HomeStep.java:166)
+	at ✽.user enters an valid postal code for delivery(file:///Volumes/Macintosh%20HD%20-%20Data/Code/SSB_Automation_Msite_Sanity/src/test/java/scenarios/features/homepage.feature:84)
+]]>
+</failure>
+<system-out><![CDATA[
+When user enters an valid postal code for delivery..........................failed
+And user clicks on the check option.........................................skipped
+]]></system-out>
+</testcase>
+<testcase classname="Home Page Functionality" name="Verify the logout functionality" time="40.365">
+<failure type="org.openqa.selenium.TimeoutException" message="Expected condition failed: waiting for visibility of element located by By.xpath: //p[contains(text(), 'Account')] (tried for 20 second(s) with 500 milliseconds interval)">
+<![CDATA[org.openqa.selenium.TimeoutException: Expected condition failed: waiting for visibility of element located by By.xpath: //p[contains(text(), 'Account')] (tried for 20 second(s) with 500 milliseconds interval)
+	at org.openqa.selenium.support.ui.WebDriverWait.timeoutException(WebDriverWait.java:84)
+	at org.openqa.selenium.support.ui.FluentWait.until(FluentWait.java:228)
+	at pages.BasePage.waitForVisibility(BasePage.java:39)
+	at pages.AccountPage.clickOnAccountOption(AccountPage.java:60)
+	at scenarios.stepDefinitions.AccountStep.user_clicks_on_the_account_in_the_footer(AccountStep.java:49)
+	at ✽.user clicks on the Account in the footer(file:///Volumes/Macintosh%20HD%20-%20Data/Code/SSB_Automation_Msite_Sanity/src/test/java/scenarios/features/homepage.feature:91)
+Caused by: org.openqa.selenium.NoSuchWindowException: no such window: target window already closed
+from unknown error: web view not found
+  (Session info: chrome=143.0.7499.110)
+Build info: version: '4.27.0', revision: 'd6e718d134'
+System info: os.name: 'Mac OS X', os.arch: 'x86_64', os.version: '26.1', java.version: '21.0.8'
+Driver info: io.appium.java_client.AppiumDriver
+Command: [4b151676-59cf-48fb-9cf8-3d6bafff8521, findElement {using=xpath, value=//p[contains(text(), 'Account')]}]
+Capabilities {appium:automationName: UiAutomator2, appium:chromedriverAutodownload: true, appium:chromedriverExecutable: /Users/apple/Downloads/chro..., appium:chromedriverUseSystemExecutable: false, appium:databaseEnabled: false, appium:desired: {appActivity: com.android.chrome/com.goog..., appPackage: com.android.chrome, automationName: UiAutomator2, browserName: Chrome, chromedriverAutodownload: true, chromedriverExecutable: /Users/apple/Downloads/chro..., chromedriverUseSystemExecutable: false, ensureWebviewsHavePages: true, forceAppLaunch: true, noReset: true, platformName: ANDROID}, appium:deviceApiLevel: 33, appium:deviceManufacturer: Google, appium:deviceModel: Pixel 4a, appium:deviceName: 14081JEC202036, appium:deviceScreenDensity: 440, appium:deviceScreenSize: 1080x2340, appium:deviceUDID: 14081JEC202036, appium:ensureWebviewsHavePages: true, appium:forceAppLaunch: true, appium:javascriptEnabled: true, appium:locationContextEnabled: false, appium:networkConnectionEnabled: true, appium:noReset: true, appium:pixelRatio: 2.75, appium:platformVersion: 13, appium:statBarHeight: 136, appium:takesScreenshot: true, appium:viewportRect: {height: 2204, left: 0, top: 136, width: 1080}, appium:warnings: {}, appium:webStorageEnabled: false, browserName: Chrome, platformName: ANDROID}
+Session ID: 4b151676-59cf-48fb-9cf8-3d6bafff8521
+	at java.base/jdk.internal.reflect.DirectConstructorHandleAccessor.newInstance(DirectConstructorHandleAccessor.java:62)
+	at java.base/java.lang.reflect.Constructor.newInstanceWithCaller(Constructor.java:502)
+	at java.base/java.lang.reflect.Constructor.newInstance(Constructor.java:486)
+	at org.openqa.selenium.remote.ErrorCodec.decode(ErrorCodec.java:167)
+	at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:138)
+	at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:50)
+	at org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:190)
+	at io.appium.java_client.remote.AppiumCommandExecutor.execute(AppiumCommandExecutor.java:237)
+	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:545)
+	at org.openqa.selenium.remote.ElementLocation$ElementFinder$2.findElement(ElementLocation.java:165)
+	at org.openqa.selenium.remote.ElementLocation.findElement(ElementLocation.java:59)
+	at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:368)
+	at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:362)
+	at org.openqa.selenium.support.ui.ExpectedConditions$7.apply(ExpectedConditions.java:194)
+	at org.openqa.selenium.support.ui.ExpectedConditions$7.apply(ExpectedConditions.java:190)
+	at org.openqa.selenium.support.ui.FluentWait.until(FluentWait.java:203)
+	at pages.BasePage.waitForVisibility(BasePage.java:39)
+	at pages.AccountPage.clickOnAccountOption(AccountPage.java:60)
+	at scenarios.stepDefinitions.AccountStep.user_clicks_on_the_account_in_the_footer(AccountStep.java:49)
+	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:103)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:580)
+	at io.cucumber.java.Invoker.doInvoke(Invoker.java:66)
+	at io.cucumber.java.Invoker.invoke(Invoker.java:24)
+	at io.cucumber.java.AbstractGlueDefinition.invokeMethod(AbstractGlueDefinition.java:47)
+	at io.cucumber.java.JavaStepDefinition.execute(JavaStepDefinition.java:29)
+	at io.cucumber.core.runner.CoreStepDefinition.execute(CoreStepDefinition.java:66)
+	at io.cucumber.core.runner.PickleStepDefinitionMatch.runStep(PickleStepDefinitionMatch.java:62)
+	at io.cucumber.core.runner.ExecutionMode$1.execute(ExecutionMode.java:10)
+	at io.cucumber.core.runner.TestStep.executeStep(TestStep.java:81)
+	at io.cucumber.core.runner.TestStep.run(TestStep.java:53)
+	at io.cucumber.core.runner.PickleStepTestStep.run(PickleStepTestStep.java:51)
+	at io.cucumber.core.runner.TestCase.run(TestCase.java:84)
+	at io.cucumber.core.runner.Runner.runPickle(Runner.java:75)
+	at io.cucumber.testng.TestNGCucumberRunner.lambda$runScenario$1(TestNGCucumberRunner.java:135)
+	at io.cucumber.core.runtime.CucumberExecutionContext.lambda$runTestCase$5(CucumberExecutionContext.java:136)
+	at io.cucumber.core.runtime.RethrowingThrowableCollector.executeAndThrow(RethrowingThrowableCollector.java:23)
+	at io.cucumber.core.runtime.CucumberExecutionContext.runTestCase(CucumberExecutionContext.java:136)
+	at io.cucumber.testng.TestNGCucumberRunner.runScenario(TestNGCucumberRunner.java:132)
+	at io.cucumber.testng.AbstractTestNGCucumberTests.runScenario(AbstractTestNGCucumberTests.java:35)
+	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:103)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:580)
+	at org.testng.internal.invokers.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:141)
+	at org.testng.internal.invokers.TestInvoker.invokeMethod(TestInvoker.java:686)
+	at org.testng.internal.invokers.TestInvoker.invokeTestMethod(TestInvoker.java:230)
+	at org.testng.internal.invokers.MethodRunner.runInSequence(MethodRunner.java:63)
+	at org.testng.internal.invokers.TestInvoker$MethodInvocationAgent.invoke(TestInvoker.java:992)
+	at org.testng.internal.invokers.TestInvoker.invokeTestMethods(TestInvoker.java:203)
+	at org.testng.internal.invokers.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:154)
+	at org.testng.internal.invokers.TestMethodWorker.run(TestMethodWorker.java:134)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1596)
+	at org.testng.TestRunner.privateRun(TestRunner.java:739)
+	at org.testng.TestRunner.run(TestRunner.java:614)
+	at org.testng.SuiteRunner.runTest(SuiteRunner.java:421)
+	at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:413)
+	at org.testng.SuiteRunner.privateRun(SuiteRunner.java:373)
+	at org.testng.SuiteRunner.run(SuiteRunner.java:312)
+	at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)
+	at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:95)
+	at org.testng.TestNG.runSuitesSequentially(TestNG.java:1274)
+	at org.testng.TestNG.runSuitesLocally(TestNG.java:1208)
+	at org.testng.TestNG.runSuites(TestNG.java:1112)
+	at org.testng.TestNG.run(TestNG.java:1079)
+	at com.intellij.rt.testng.IDEARemoteTestNG.run(IDEARemoteTestNG.java:65)
+	at com.intellij.rt.testng.RemoteTestNGStarter.main(RemoteTestNGStarter.java:105)
+]]>
+</failure>
+<system-out><![CDATA[
+Given user back to home page................................................passed
+When user clicks on the Account in the footer...............................failed
+And user clicks on the Logout button........................................skipped
 Then validate that the user is logged out...................................skipped
+]]></system-out>
+</testcase>
+<testcase classname="User Login Functionality with Valid and Invalid Data" name="Verify the sign-in functionality via phone number for an existing user" time="40.356">
+<failure type="org.openqa.selenium.TimeoutException" message="Expected condition failed: waiting for visibility of element located by By.xpath: //p[contains(text(), 'Account')] (tried for 20 second(s) with 500 milliseconds interval)">
+<![CDATA[org.openqa.selenium.TimeoutException: Expected condition failed: waiting for visibility of element located by By.xpath: //p[contains(text(), 'Account')] (tried for 20 second(s) with 500 milliseconds interval)
+	at org.openqa.selenium.support.ui.WebDriverWait.timeoutException(WebDriverWait.java:84)
+	at org.openqa.selenium.support.ui.FluentWait.until(FluentWait.java:228)
+	at pages.BasePage.waitForVisibility(BasePage.java:39)
+	at pages.AccountPage.clickOnAccountOption(AccountPage.java:60)
+	at scenarios.stepDefinitions.AccountStep.user_clicks_on_the_account_in_the_footer(AccountStep.java:49)
+	at ✽.user clicks on the Account in the footer(file:///Volumes/Macintosh%20HD%20-%20Data/Code/SSB_Automation_Msite_Sanity/src/test/java/scenarios/features/login.feature:8)
+Caused by: org.openqa.selenium.NoSuchWindowException: no such window: target window already closed
+from unknown error: web view not found
+  (Session info: chrome=143.0.7499.110)
+Build info: version: '4.27.0', revision: 'd6e718d134'
+System info: os.name: 'Mac OS X', os.arch: 'x86_64', os.version: '26.1', java.version: '21.0.8'
+Driver info: io.appium.java_client.AppiumDriver
+Command: [4b151676-59cf-48fb-9cf8-3d6bafff8521, findElement {using=xpath, value=//p[contains(text(), 'Account')]}]
+Capabilities {appium:automationName: UiAutomator2, appium:chromedriverAutodownload: true, appium:chromedriverExecutable: /Users/apple/Downloads/chro..., appium:chromedriverUseSystemExecutable: false, appium:databaseEnabled: false, appium:desired: {appActivity: com.android.chrome/com.goog..., appPackage: com.android.chrome, automationName: UiAutomator2, browserName: Chrome, chromedriverAutodownload: true, chromedriverExecutable: /Users/apple/Downloads/chro..., chromedriverUseSystemExecutable: false, ensureWebviewsHavePages: true, forceAppLaunch: true, noReset: true, platformName: ANDROID}, appium:deviceApiLevel: 33, appium:deviceManufacturer: Google, appium:deviceModel: Pixel 4a, appium:deviceName: 14081JEC202036, appium:deviceScreenDensity: 440, appium:deviceScreenSize: 1080x2340, appium:deviceUDID: 14081JEC202036, appium:ensureWebviewsHavePages: true, appium:forceAppLaunch: true, appium:javascriptEnabled: true, appium:locationContextEnabled: false, appium:networkConnectionEnabled: true, appium:noReset: true, appium:pixelRatio: 2.75, appium:platformVersion: 13, appium:statBarHeight: 136, appium:takesScreenshot: true, appium:viewportRect: {height: 2204, left: 0, top: 136, width: 1080}, appium:warnings: {}, appium:webStorageEnabled: false, browserName: Chrome, platformName: ANDROID}
+Session ID: 4b151676-59cf-48fb-9cf8-3d6bafff8521
+	at java.base/jdk.internal.reflect.DirectConstructorHandleAccessor.newInstance(DirectConstructorHandleAccessor.java:62)
+	at java.base/java.lang.reflect.Constructor.newInstanceWithCaller(Constructor.java:502)
+	at java.base/java.lang.reflect.Constructor.newInstance(Constructor.java:486)
+	at org.openqa.selenium.remote.ErrorCodec.decode(ErrorCodec.java:167)
+	at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:138)
+	at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:50)
+	at org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:190)
+	at io.appium.java_client.remote.AppiumCommandExecutor.execute(AppiumCommandExecutor.java:237)
+	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:545)
+	at org.openqa.selenium.remote.ElementLocation$ElementFinder$2.findElement(ElementLocation.java:165)
+	at org.openqa.selenium.remote.ElementLocation.findElement(ElementLocation.java:59)
+	at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:368)
+	at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:362)
+	at org.openqa.selenium.support.ui.ExpectedConditions$7.apply(ExpectedConditions.java:194)
+	at org.openqa.selenium.support.ui.ExpectedConditions$7.apply(ExpectedConditions.java:190)
+	at org.openqa.selenium.support.ui.FluentWait.until(FluentWait.java:203)
+	at pages.BasePage.waitForVisibility(BasePage.java:39)
+	at pages.AccountPage.clickOnAccountOption(AccountPage.java:60)
+	at scenarios.stepDefinitions.AccountStep.user_clicks_on_the_account_in_the_footer(AccountStep.java:49)
+	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:103)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:580)
+	at io.cucumber.java.Invoker.doInvoke(Invoker.java:66)
+	at io.cucumber.java.Invoker.invoke(Invoker.java:24)
+	at io.cucumber.java.AbstractGlueDefinition.invokeMethod(AbstractGlueDefinition.java:47)
+	at io.cucumber.java.JavaStepDefinition.execute(JavaStepDefinition.java:29)
+	at io.cucumber.core.runner.CoreStepDefinition.execute(CoreStepDefinition.java:66)
+	at io.cucumber.core.runner.PickleStepDefinitionMatch.runStep(PickleStepDefinitionMatch.java:62)
+	at io.cucumber.core.runner.ExecutionMode$1.execute(ExecutionMode.java:10)
+	at io.cucumber.core.runner.TestStep.executeStep(TestStep.java:81)
+	at io.cucumber.core.runner.TestStep.run(TestStep.java:53)
+	at io.cucumber.core.runner.PickleStepTestStep.run(PickleStepTestStep.java:51)
+	at io.cucumber.core.runner.TestCase.run(TestCase.java:84)
+	at io.cucumber.core.runner.Runner.runPickle(Runner.java:75)
+	at io.cucumber.testng.TestNGCucumberRunner.lambda$runScenario$1(TestNGCucumberRunner.java:135)
+	at io.cucumber.core.runtime.CucumberExecutionContext.lambda$runTestCase$5(CucumberExecutionContext.java:136)
+	at io.cucumber.core.runtime.RethrowingThrowableCollector.executeAndThrow(RethrowingThrowableCollector.java:23)
+	at io.cucumber.core.runtime.CucumberExecutionContext.runTestCase(CucumberExecutionContext.java:136)
+	at io.cucumber.testng.TestNGCucumberRunner.runScenario(TestNGCucumberRunner.java:132)
+	at io.cucumber.testng.AbstractTestNGCucumberTests.runScenario(AbstractTestNGCucumberTests.java:35)
+	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:103)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:580)
+	at org.testng.internal.invokers.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:141)
+	at org.testng.internal.invokers.TestInvoker.invokeMethod(TestInvoker.java:686)
+	at org.testng.internal.invokers.TestInvoker.invokeTestMethod(TestInvoker.java:230)
+	at org.testng.internal.invokers.MethodRunner.runInSequence(MethodRunner.java:63)
+	at org.testng.internal.invokers.TestInvoker$MethodInvocationAgent.invoke(TestInvoker.java:992)
+	at org.testng.internal.invokers.TestInvoker.invokeTestMethods(TestInvoker.java:203)
+	at org.testng.internal.invokers.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:154)
+	at org.testng.internal.invokers.TestMethodWorker.run(TestMethodWorker.java:134)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1596)
+	at org.testng.TestRunner.privateRun(TestRunner.java:739)
+	at org.testng.TestRunner.run(TestRunner.java:614)
+	at org.testng.SuiteRunner.runTest(SuiteRunner.java:421)
+	at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:413)
+	at org.testng.SuiteRunner.privateRun(SuiteRunner.java:373)
+	at org.testng.SuiteRunner.run(SuiteRunner.java:312)
+	at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)
+	at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:95)
+	at org.testng.TestNG.runSuitesSequentially(TestNG.java:1274)
+	at org.testng.TestNG.runSuitesLocally(TestNG.java:1208)
+	at org.testng.TestNG.runSuites(TestNG.java:1112)
+	at org.testng.TestNG.run(TestNG.java:1079)
+	at com.intellij.rt.testng.IDEARemoteTestNG.run(IDEARemoteTestNG.java:65)
+	at com.intellij.rt.testng.RemoteTestNGStarter.main(RemoteTestNGStarter.java:105)
+]]>
+</failure>
+<system-out><![CDATA[
+Given user launches the application.........................................passed
+And user back to home page..................................................passed
+And user clicks on the Account in the footer................................failed
+When user clicks the Login button...........................................skipped
+And user enters the valid mobile number.....................................skipped
+And user clicks the Continue button.........................................skipped
+Then user enters the OTP....................................................skipped
+And user validates otp result...............................................skipped
+And system should display the appropriate login status......................skipped
+]]></system-out>
+</testcase>
+<testcase classname="User Login Functionality with Valid and Invalid Data" name="Verify the logout functionality" time="20.38">
+<failure type="org.openqa.selenium.TimeoutException" message="Expected condition failed: waiting for visibility of element located by By.xpath: //p[contains(text(), 'Account')] (tried for 20 second(s) with 500 milliseconds interval)">
+<![CDATA[org.openqa.selenium.TimeoutException: Expected condition failed: waiting for visibility of element located by By.xpath: //p[contains(text(), 'Account')] (tried for 20 second(s) with 500 milliseconds interval)
+	at org.openqa.selenium.support.ui.WebDriverWait.timeoutException(WebDriverWait.java:84)
+	at org.openqa.selenium.support.ui.FluentWait.until(FluentWait.java:228)
+	at pages.BasePage.waitForVisibility(BasePage.java:39)
+	at pages.AccountPage.clickOnAccountOption(AccountPage.java:60)
+	at scenarios.stepDefinitions.AccountStep.user_clicks_on_the_account_in_the_footer(AccountStep.java:49)
+	at ✽.user clicks on the Account in the footer(file:///Volumes/Macintosh%20HD%20-%20Data/Code/SSB_Automation_Msite_Sanity/src/test/java/scenarios/features/login.feature:19)
+Caused by: org.openqa.selenium.NoSuchWindowException: no such window: target window already closed
+from unknown error: web view not found
+  (Session info: chrome=143.0.7499.110)
+Build info: version: '4.27.0', revision: 'd6e718d134'
+System info: os.name: 'Mac OS X', os.arch: 'x86_64', os.version: '26.1', java.version: '21.0.8'
+Driver info: io.appium.java_client.AppiumDriver
+Command: [4b151676-59cf-48fb-9cf8-3d6bafff8521, findElement {using=xpath, value=//p[contains(text(), 'Account')]}]
+Capabilities {appium:automationName: UiAutomator2, appium:chromedriverAutodownload: true, appium:chromedriverExecutable: /Users/apple/Downloads/chro..., appium:chromedriverUseSystemExecutable: false, appium:databaseEnabled: false, appium:desired: {appActivity: com.android.chrome/com.goog..., appPackage: com.android.chrome, automationName: UiAutomator2, browserName: Chrome, chromedriverAutodownload: true, chromedriverExecutable: /Users/apple/Downloads/chro..., chromedriverUseSystemExecutable: false, ensureWebviewsHavePages: true, forceAppLaunch: true, noReset: true, platformName: ANDROID}, appium:deviceApiLevel: 33, appium:deviceManufacturer: Google, appium:deviceModel: Pixel 4a, appium:deviceName: 14081JEC202036, appium:deviceScreenDensity: 440, appium:deviceScreenSize: 1080x2340, appium:deviceUDID: 14081JEC202036, appium:ensureWebviewsHavePages: true, appium:forceAppLaunch: true, appium:javascriptEnabled: true, appium:locationContextEnabled: false, appium:networkConnectionEnabled: true, appium:noReset: true, appium:pixelRatio: 2.75, appium:platformVersion: 13, appium:statBarHeight: 136, appium:takesScreenshot: true, appium:viewportRect: {height: 2204, left: 0, top: 136, width: 1080}, appium:warnings: {}, appium:webStorageEnabled: false, browserName: Chrome, platformName: ANDROID}
+Session ID: 4b151676-59cf-48fb-9cf8-3d6bafff8521
+	at java.base/jdk.internal.reflect.DirectConstructorHandleAccessor.newInstance(DirectConstructorHandleAccessor.java:62)
+	at java.base/java.lang.reflect.Constructor.newInstanceWithCaller(Constructor.java:502)
+	at java.base/java.lang.reflect.Constructor.newInstance(Constructor.java:486)
+	at org.openqa.selenium.remote.ErrorCodec.decode(ErrorCodec.java:167)
+	at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:138)
+	at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:50)
+	at org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:190)
+	at io.appium.java_client.remote.AppiumCommandExecutor.execute(AppiumCommandExecutor.java:237)
+	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:545)
+	at org.openqa.selenium.remote.ElementLocation$ElementFinder$2.findElement(ElementLocation.java:165)
+	at org.openqa.selenium.remote.ElementLocation.findElement(ElementLocation.java:59)
+	at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:368)
+	at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:362)
+	at org.openqa.selenium.support.ui.ExpectedConditions$7.apply(ExpectedConditions.java:194)
+	at org.openqa.selenium.support.ui.ExpectedConditions$7.apply(ExpectedConditions.java:190)
+	at org.openqa.selenium.support.ui.FluentWait.until(FluentWait.java:203)
+	at pages.BasePage.waitForVisibility(BasePage.java:39)
+	at pages.AccountPage.clickOnAccountOption(AccountPage.java:60)
+	at scenarios.stepDefinitions.AccountStep.user_clicks_on_the_account_in_the_footer(AccountStep.java:49)
+	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:103)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:580)
+	at io.cucumber.java.Invoker.doInvoke(Invoker.java:66)
+	at io.cucumber.java.Invoker.invoke(Invoker.java:24)
+	at io.cucumber.java.AbstractGlueDefinition.invokeMethod(AbstractGlueDefinition.java:47)
+	at io.cucumber.java.JavaStepDefinition.execute(JavaStepDefinition.java:29)
+	at io.cucumber.core.runner.CoreStepDefinition.execute(CoreStepDefinition.java:66)
+	at io.cucumber.core.runner.PickleStepDefinitionMatch.runStep(PickleStepDefinitionMatch.java:62)
+	at io.cucumber.core.runner.ExecutionMode$1.execute(ExecutionMode.java:10)
+	at io.cucumber.core.runner.TestStep.executeStep(TestStep.java:81)
+	at io.cucumber.core.runner.TestStep.run(TestStep.java:53)
+	at io.cucumber.core.runner.PickleStepTestStep.run(PickleStepTestStep.java:51)
+	at io.cucumber.core.runner.TestCase.run(TestCase.java:84)
+	at io.cucumber.core.runner.Runner.runPickle(Runner.java:75)
+	at io.cucumber.testng.TestNGCucumberRunner.lambda$runScenario$1(TestNGCucumberRunner.java:135)
+	at io.cucumber.core.runtime.CucumberExecutionContext.lambda$runTestCase$5(CucumberExecutionContext.java:136)
+	at io.cucumber.core.runtime.RethrowingThrowableCollector.executeAndThrow(RethrowingThrowableCollector.java:23)
+	at io.cucumber.core.runtime.CucumberExecutionContext.runTestCase(CucumberExecutionContext.java:136)
+	at io.cucumber.testng.TestNGCucumberRunner.runScenario(TestNGCucumberRunner.java:132)
+	at io.cucumber.testng.AbstractTestNGCucumberTests.runScenario(AbstractTestNGCucumberTests.java:35)
+	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:103)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:580)
+	at org.testng.internal.invokers.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:141)
+	at org.testng.internal.invokers.TestInvoker.invokeMethod(TestInvoker.java:686)
+	at org.testng.internal.invokers.TestInvoker.invokeTestMethod(TestInvoker.java:230)
+	at org.testng.internal.invokers.MethodRunner.runInSequence(MethodRunner.java:63)
+	at org.testng.internal.invokers.TestInvoker$MethodInvocationAgent.invoke(TestInvoker.java:992)
+	at org.testng.internal.invokers.TestInvoker.invokeTestMethods(TestInvoker.java:203)
+	at org.testng.internal.invokers.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:154)
+	at org.testng.internal.invokers.TestMethodWorker.run(TestMethodWorker.java:134)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1596)
+	at org.testng.TestRunner.privateRun(TestRunner.java:739)
+	at org.testng.TestRunner.run(TestRunner.java:614)
+	at org.testng.SuiteRunner.runTest(SuiteRunner.java:421)
+	at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:413)
+	at org.testng.SuiteRunner.privateRun(SuiteRunner.java:373)
+	at org.testng.SuiteRunner.run(SuiteRunner.java:312)
+	at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)
+	at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:95)
+	at org.testng.TestNG.runSuitesSequentially(TestNG.java:1274)
+	at org.testng.TestNG.runSuitesLocally(TestNG.java:1208)
+	at org.testng.TestNG.runSuites(TestNG.java:1112)
+	at org.testng.TestNG.run(TestNG.java:1079)
+	at com.intellij.rt.testng.IDEARemoteTestNG.run(IDEARemoteTestNG.java:65)
+	at com.intellij.rt.testng.RemoteTestNGStarter.main(RemoteTestNGStarter.java:105)
+]]>
+</failure>
+<system-out><![CDATA[
+Given user launches the application.........................................passed
+And user clicks on the Account in the footer................................failed
+And user clicks on the Logout button........................................skipped
+Then validate that the user is logged out...................................skipped
+]]></system-out>
+</testcase>
+<testcase classname="User Login Functionality with Valid and Invalid Data" name="Verify the OTP functionality with an invalid OTP and resend functionality" time="20.372">
+<failure type="org.openqa.selenium.TimeoutException" message="Expected condition failed: waiting for visibility of element located by By.xpath: //p[contains(text(), 'Account')] (tried for 20 second(s) with 500 milliseconds interval)">
+<![CDATA[org.openqa.selenium.TimeoutException: Expected condition failed: waiting for visibility of element located by By.xpath: //p[contains(text(), 'Account')] (tried for 20 second(s) with 500 milliseconds interval)
+	at org.openqa.selenium.support.ui.WebDriverWait.timeoutException(WebDriverWait.java:84)
+	at org.openqa.selenium.support.ui.FluentWait.until(FluentWait.java:228)
+	at pages.BasePage.waitForVisibility(BasePage.java:39)
+	at pages.AccountPage.clickOnAccountOption(AccountPage.java:60)
+	at scenarios.stepDefinitions.AccountStep.user_clicks_on_the_account_in_the_footer(AccountStep.java:49)
+	at ✽.user clicks on the Account in the footer(file:///Volumes/Macintosh%20HD%20-%20Data/Code/SSB_Automation_Msite_Sanity/src/test/java/scenarios/features/login.feature:32)
+Caused by: org.openqa.selenium.NoSuchWindowException: no such window: target window already closed
+from unknown error: web view not found
+  (Session info: chrome=143.0.7499.110)
+Build info: version: '4.27.0', revision: 'd6e718d134'
+System info: os.name: 'Mac OS X', os.arch: 'x86_64', os.version: '26.1', java.version: '21.0.8'
+Driver info: io.appium.java_client.AppiumDriver
+Command: [4b151676-59cf-48fb-9cf8-3d6bafff8521, findElement {using=xpath, value=//p[contains(text(), 'Account')]}]
+Capabilities {appium:automationName: UiAutomator2, appium:chromedriverAutodownload: true, appium:chromedriverExecutable: /Users/apple/Downloads/chro..., appium:chromedriverUseSystemExecutable: false, appium:databaseEnabled: false, appium:desired: {appActivity: com.android.chrome/com.goog..., appPackage: com.android.chrome, automationName: UiAutomator2, browserName: Chrome, chromedriverAutodownload: true, chromedriverExecutable: /Users/apple/Downloads/chro..., chromedriverUseSystemExecutable: false, ensureWebviewsHavePages: true, forceAppLaunch: true, noReset: true, platformName: ANDROID}, appium:deviceApiLevel: 33, appium:deviceManufacturer: Google, appium:deviceModel: Pixel 4a, appium:deviceName: 14081JEC202036, appium:deviceScreenDensity: 440, appium:deviceScreenSize: 1080x2340, appium:deviceUDID: 14081JEC202036, appium:ensureWebviewsHavePages: true, appium:forceAppLaunch: true, appium:javascriptEnabled: true, appium:locationContextEnabled: false, appium:networkConnectionEnabled: true, appium:noReset: true, appium:pixelRatio: 2.75, appium:platformVersion: 13, appium:statBarHeight: 136, appium:takesScreenshot: true, appium:viewportRect: {height: 2204, left: 0, top: 136, width: 1080}, appium:warnings: {}, appium:webStorageEnabled: false, browserName: Chrome, platformName: ANDROID}
+Session ID: 4b151676-59cf-48fb-9cf8-3d6bafff8521
+	at java.base/jdk.internal.reflect.DirectConstructorHandleAccessor.newInstance(DirectConstructorHandleAccessor.java:62)
+	at java.base/java.lang.reflect.Constructor.newInstanceWithCaller(Constructor.java:502)
+	at java.base/java.lang.reflect.Constructor.newInstance(Constructor.java:486)
+	at org.openqa.selenium.remote.ErrorCodec.decode(ErrorCodec.java:167)
+	at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:138)
+	at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:50)
+	at org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:190)
+	at io.appium.java_client.remote.AppiumCommandExecutor.execute(AppiumCommandExecutor.java:237)
+	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:545)
+	at org.openqa.selenium.remote.ElementLocation$ElementFinder$2.findElement(ElementLocation.java:165)
+	at org.openqa.selenium.remote.ElementLocation.findElement(ElementLocation.java:59)
+	at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:368)
+	at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:362)
+	at org.openqa.selenium.support.ui.ExpectedConditions$7.apply(ExpectedConditions.java:194)
+	at org.openqa.selenium.support.ui.ExpectedConditions$7.apply(ExpectedConditions.java:190)
+	at org.openqa.selenium.support.ui.FluentWait.until(FluentWait.java:203)
+	at pages.BasePage.waitForVisibility(BasePage.java:39)
+	at pages.AccountPage.clickOnAccountOption(AccountPage.java:60)
+	at scenarios.stepDefinitions.AccountStep.user_clicks_on_the_account_in_the_footer(AccountStep.java:49)
+	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:103)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:580)
+	at io.cucumber.java.Invoker.doInvoke(Invoker.java:66)
+	at io.cucumber.java.Invoker.invoke(Invoker.java:24)
+	at io.cucumber.java.AbstractGlueDefinition.invokeMethod(AbstractGlueDefinition.java:47)
+	at io.cucumber.java.JavaStepDefinition.execute(JavaStepDefinition.java:29)
+	at io.cucumber.core.runner.CoreStepDefinition.execute(CoreStepDefinition.java:66)
+	at io.cucumber.core.runner.PickleStepDefinitionMatch.runStep(PickleStepDefinitionMatch.java:62)
+	at io.cucumber.core.runner.ExecutionMode$1.execute(ExecutionMode.java:10)
+	at io.cucumber.core.runner.TestStep.executeStep(TestStep.java:81)
+	at io.cucumber.core.runner.TestStep.run(TestStep.java:53)
+	at io.cucumber.core.runner.PickleStepTestStep.run(PickleStepTestStep.java:51)
+	at io.cucumber.core.runner.TestCase.run(TestCase.java:84)
+	at io.cucumber.core.runner.Runner.runPickle(Runner.java:75)
+	at io.cucumber.testng.TestNGCucumberRunner.lambda$runScenario$1(TestNGCucumberRunner.java:135)
+	at io.cucumber.core.runtime.CucumberExecutionContext.lambda$runTestCase$5(CucumberExecutionContext.java:136)
+	at io.cucumber.core.runtime.RethrowingThrowableCollector.executeAndThrow(RethrowingThrowableCollector.java:23)
+	at io.cucumber.core.runtime.CucumberExecutionContext.runTestCase(CucumberExecutionContext.java:136)
+	at io.cucumber.testng.TestNGCucumberRunner.runScenario(TestNGCucumberRunner.java:132)
+	at io.cucumber.testng.AbstractTestNGCucumberTests.runScenario(AbstractTestNGCucumberTests.java:35)
+	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:103)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:580)
+	at org.testng.internal.invokers.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:141)
+	at org.testng.internal.invokers.TestInvoker.invokeMethod(TestInvoker.java:686)
+	at org.testng.internal.invokers.TestInvoker.invokeTestMethod(TestInvoker.java:230)
+	at org.testng.internal.invokers.MethodRunner.runInSequence(MethodRunner.java:63)
+	at org.testng.internal.invokers.TestInvoker$MethodInvocationAgent.invoke(TestInvoker.java:992)
+	at org.testng.internal.invokers.TestInvoker.invokeTestMethods(TestInvoker.java:203)
+	at org.testng.internal.invokers.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:154)
+	at org.testng.internal.invokers.TestMethodWorker.run(TestMethodWorker.java:134)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1596)
+	at org.testng.TestRunner.privateRun(TestRunner.java:739)
+	at org.testng.TestRunner.run(TestRunner.java:614)
+	at org.testng.SuiteRunner.runTest(SuiteRunner.java:421)
+	at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:413)
+	at org.testng.SuiteRunner.privateRun(SuiteRunner.java:373)
+	at org.testng.SuiteRunner.run(SuiteRunner.java:312)
+	at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)
+	at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:95)
+	at org.testng.TestNG.runSuitesSequentially(TestNG.java:1274)
+	at org.testng.TestNG.runSuitesLocally(TestNG.java:1208)
+	at org.testng.TestNG.runSuites(TestNG.java:1112)
+	at org.testng.TestNG.run(TestNG.java:1079)
+	at com.intellij.rt.testng.IDEARemoteTestNG.run(IDEARemoteTestNG.java:65)
+	at com.intellij.rt.testng.RemoteTestNGStarter.main(RemoteTestNGStarter.java:105)
+]]>
+</failure>
+<system-out><![CDATA[
+Given user launches the application.........................................passed
+And user clicks on the Account in the footer................................failed
+When user clicks the Login button...........................................skipped
+And user enters the mobile number...........................................skipped
+And user clicks the Continue button.........................................skipped
+Then user enters the OTP....................................................skipped
+And user validates otp result for invalid otp...............................skipped
+And user clicks on the Resend SMS option....................................skipped
+And user successfully resends the OTP.......................................skipped
+Then user enters the invalid OTP............................................skipped
+And user validates otp result for invalid otp...............................skipped
+]]></system-out>
+</testcase>
+<testcase classname="User Login Functionality with Valid and Invalid Data" name="Verify the sign-in functionality via phone number with an invalid number" time="20.341">
+<failure type="org.openqa.selenium.TimeoutException" message="Expected condition failed: waiting for visibility of element located by By.xpath: //p[contains(text(), 'Account')] (tried for 20 second(s) with 500 milliseconds interval)">
+<![CDATA[org.openqa.selenium.TimeoutException: Expected condition failed: waiting for visibility of element located by By.xpath: //p[contains(text(), 'Account')] (tried for 20 second(s) with 500 milliseconds interval)
+	at org.openqa.selenium.support.ui.WebDriverWait.timeoutException(WebDriverWait.java:84)
+	at org.openqa.selenium.support.ui.FluentWait.until(FluentWait.java:228)
+	at pages.BasePage.waitForVisibility(BasePage.java:39)
+	at pages.AccountPage.clickOnAccountOption(AccountPage.java:60)
+	at scenarios.stepDefinitions.AccountStep.user_clicks_on_the_account_in_the_footer(AccountStep.java:49)
+	at ✽.user clicks on the Account in the footer(file:///Volumes/Macintosh%20HD%20-%20Data/Code/SSB_Automation_Msite_Sanity/src/test/java/scenarios/features/login.feature:46)
+Caused by: org.openqa.selenium.NoSuchWindowException: no such window: target window already closed
+from unknown error: web view not found
+  (Session info: chrome=143.0.7499.110)
+Build info: version: '4.27.0', revision: 'd6e718d134'
+System info: os.name: 'Mac OS X', os.arch: 'x86_64', os.version: '26.1', java.version: '21.0.8'
+Driver info: io.appium.java_client.AppiumDriver
+Command: [4b151676-59cf-48fb-9cf8-3d6bafff8521, findElement {using=xpath, value=//p[contains(text(), 'Account')]}]
+Capabilities {appium:automationName: UiAutomator2, appium:chromedriverAutodownload: true, appium:chromedriverExecutable: /Users/apple/Downloads/chro..., appium:chromedriverUseSystemExecutable: false, appium:databaseEnabled: false, appium:desired: {appActivity: com.android.chrome/com.goog..., appPackage: com.android.chrome, automationName: UiAutomator2, browserName: Chrome, chromedriverAutodownload: true, chromedriverExecutable: /Users/apple/Downloads/chro..., chromedriverUseSystemExecutable: false, ensureWebviewsHavePages: true, forceAppLaunch: true, noReset: true, platformName: ANDROID}, appium:deviceApiLevel: 33, appium:deviceManufacturer: Google, appium:deviceModel: Pixel 4a, appium:deviceName: 14081JEC202036, appium:deviceScreenDensity: 440, appium:deviceScreenSize: 1080x2340, appium:deviceUDID: 14081JEC202036, appium:ensureWebviewsHavePages: true, appium:forceAppLaunch: true, appium:javascriptEnabled: true, appium:locationContextEnabled: false, appium:networkConnectionEnabled: true, appium:noReset: true, appium:pixelRatio: 2.75, appium:platformVersion: 13, appium:statBarHeight: 136, appium:takesScreenshot: true, appium:viewportRect: {height: 2204, left: 0, top: 136, width: 1080}, appium:warnings: {}, appium:webStorageEnabled: false, browserName: Chrome, platformName: ANDROID}
+Session ID: 4b151676-59cf-48fb-9cf8-3d6bafff8521
+	at java.base/jdk.internal.reflect.DirectConstructorHandleAccessor.newInstance(DirectConstructorHandleAccessor.java:62)
+	at java.base/java.lang.reflect.Constructor.newInstanceWithCaller(Constructor.java:502)
+	at java.base/java.lang.reflect.Constructor.newInstance(Constructor.java:486)
+	at org.openqa.selenium.remote.ErrorCodec.decode(ErrorCodec.java:167)
+	at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:138)
+	at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:50)
+	at org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:190)
+	at io.appium.java_client.remote.AppiumCommandExecutor.execute(AppiumCommandExecutor.java:237)
+	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:545)
+	at org.openqa.selenium.remote.ElementLocation$ElementFinder$2.findElement(ElementLocation.java:165)
+	at org.openqa.selenium.remote.ElementLocation.findElement(ElementLocation.java:59)
+	at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:368)
+	at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:362)
+	at org.openqa.selenium.support.ui.ExpectedConditions$7.apply(ExpectedConditions.java:194)
+	at org.openqa.selenium.support.ui.ExpectedConditions$7.apply(ExpectedConditions.java:190)
+	at org.openqa.selenium.support.ui.FluentWait.until(FluentWait.java:203)
+	at pages.BasePage.waitForVisibility(BasePage.java:39)
+	at pages.AccountPage.clickOnAccountOption(AccountPage.java:60)
+	at scenarios.stepDefinitions.AccountStep.user_clicks_on_the_account_in_the_footer(AccountStep.java:49)
+	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:103)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:580)
+	at io.cucumber.java.Invoker.doInvoke(Invoker.java:66)
+	at io.cucumber.java.Invoker.invoke(Invoker.java:24)
+	at io.cucumber.java.AbstractGlueDefinition.invokeMethod(AbstractGlueDefinition.java:47)
+	at io.cucumber.java.JavaStepDefinition.execute(JavaStepDefinition.java:29)
+	at io.cucumber.core.runner.CoreStepDefinition.execute(CoreStepDefinition.java:66)
+	at io.cucumber.core.runner.PickleStepDefinitionMatch.runStep(PickleStepDefinitionMatch.java:62)
+	at io.cucumber.core.runner.ExecutionMode$1.execute(ExecutionMode.java:10)
+	at io.cucumber.core.runner.TestStep.executeStep(TestStep.java:81)
+	at io.cucumber.core.runner.TestStep.run(TestStep.java:53)
+	at io.cucumber.core.runner.PickleStepTestStep.run(PickleStepTestStep.java:51)
+	at io.cucumber.core.runner.TestCase.run(TestCase.java:84)
+	at io.cucumber.core.runner.Runner.runPickle(Runner.java:75)
+	at io.cucumber.testng.TestNGCucumberRunner.lambda$runScenario$1(TestNGCucumberRunner.java:135)
+	at io.cucumber.core.runtime.CucumberExecutionContext.lambda$runTestCase$5(CucumberExecutionContext.java:136)
+	at io.cucumber.core.runtime.RethrowingThrowableCollector.executeAndThrow(RethrowingThrowableCollector.java:23)
+	at io.cucumber.core.runtime.CucumberExecutionContext.runTestCase(CucumberExecutionContext.java:136)
+	at io.cucumber.testng.TestNGCucumberRunner.runScenario(TestNGCucumberRunner.java:132)
+	at io.cucumber.testng.AbstractTestNGCucumberTests.runScenario(AbstractTestNGCucumberTests.java:35)
+	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:103)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:580)
+	at org.testng.internal.invokers.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:141)
+	at org.testng.internal.invokers.TestInvoker.invokeMethod(TestInvoker.java:686)
+	at org.testng.internal.invokers.TestInvoker.invokeTestMethod(TestInvoker.java:230)
+	at org.testng.internal.invokers.MethodRunner.runInSequence(MethodRunner.java:63)
+	at org.testng.internal.invokers.TestInvoker$MethodInvocationAgent.invoke(TestInvoker.java:992)
+	at org.testng.internal.invokers.TestInvoker.invokeTestMethods(TestInvoker.java:203)
+	at org.testng.internal.invokers.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:154)
+	at org.testng.internal.invokers.TestMethodWorker.run(TestMethodWorker.java:134)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1596)
+	at org.testng.TestRunner.privateRun(TestRunner.java:739)
+	at org.testng.TestRunner.run(TestRunner.java:614)
+	at org.testng.SuiteRunner.runTest(SuiteRunner.java:421)
+	at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:413)
+	at org.testng.SuiteRunner.privateRun(SuiteRunner.java:373)
+	at org.testng.SuiteRunner.run(SuiteRunner.java:312)
+	at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)
+	at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:95)
+	at org.testng.TestNG.runSuitesSequentially(TestNG.java:1274)
+	at org.testng.TestNG.runSuitesLocally(TestNG.java:1208)
+	at org.testng.TestNG.runSuites(TestNG.java:1112)
+	at org.testng.TestNG.run(TestNG.java:1079)
+	at com.intellij.rt.testng.IDEARemoteTestNG.run(IDEARemoteTestNG.java:65)
+	at com.intellij.rt.testng.RemoteTestNGStarter.main(RemoteTestNGStarter.java:105)
+]]>
+</failure>
+<system-out><![CDATA[
+Given user launches the application.........................................passed
+And user clicks on the Account in the footer................................failed
+When user clicks the Login button...........................................skipped
+And user enters the invalid mobile number...................................skipped
+And user clicks the Continue button.........................................skipped
+Then validate that the appropriate error message is displayed...............skipped
 ]]></system-out>
 </testcase>
 </testsuite>

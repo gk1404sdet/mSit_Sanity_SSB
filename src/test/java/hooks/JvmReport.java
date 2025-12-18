@@ -12,7 +12,7 @@ public class JvmReport {
     public static void report(String jsonPath) {
         File reportOutputDirectory = new File("target/jvm-report");  // <-- better to use relative path
 
-        Configuration config = new Configuration(reportOutputDirectory, "Shoppers Stop - mSite Sanity");
+        Configuration config = new Configuration(reportOutputDirectory, "SSBeauty - mSite Sanity");
         config.addClassifications("Platform", "Mac OS X");
         config.addClassifications("Browser", "Chrome");
         config.addClassifications("Environment ","Production");

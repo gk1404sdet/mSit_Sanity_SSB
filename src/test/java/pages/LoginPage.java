@@ -1,38 +1,26 @@
 package pages;
 
 import io.appium.java_client.AppiumDriver;
-import io.appium.java_client.pagefactory.AndroidFindBy;
 import io.appium.java_client.pagefactory.AppiumFieldDecorator;
 import org.openqa.selenium.*;
 import org.openqa.selenium.support.PageFactory;
 import org.openqa.selenium.support.ui.ExpectedConditions;
-import org.openqa.selenium.support.ui.WebDriverWait;
-
-import java.time.Duration;
-import java.util.List;
 
 
 public class LoginPage extends BasePage {
 
-    public final JavascriptExecutor js = (JavascriptExecutor) driver;
+    // ---------- Locators ----------
+    private final By login = By.xpath("//button[contains(text(), 'Login')]");
+    private final By userID = By.xpath("//input[@placeholder='Enter Your Mobile Number']");
+    private final By continueButton = By.xpath("//button[contains(text(),'Continue')]");
+    public final By invalidFormatMsg = By.xpath("//div[contains(text(), 'Please enter a valid number')]");
+    private final By otp = By.xpath("//input[@type='tel']");
+    public final By invalidOTP = By.xpath("//p[contains(text(), 'Please enter a valid OTP')]");
+    public final By logout = By.xpath("//button[contains(text(), 'LOG OUT')]");
+    private final By resendOTP = By.xpath("//p[contains(text(), 'Resend SMS')]");
 
-    @AndroidFindBy(accessibility = "LOGIN")
-    public WebElement loginButton;
 
-    private final By login = By.xpath("//p[contains(text(),'LOGIN')]");
-    public final By userID = By.id("Enter your phone number");
-    private final By proceedBtn = By.xpath("//p[contains(text(), 'PROCEED')]");
-    private final By verifyOTPBtn = By.xpath("//p[contains(text(), 'VERIFY OTP')]");
-    private final By hello = By.xpath("//div[contains(text(), 'Hello, ')]");
-    private final By logout = By.xpath("//p[contains(text(), 'LOGOUT')]");
-    private final By yesLogout = By.xpath("//p[contains(text(), 'YES,LOG OUT')]");
-    private final By resendOTP = By.xpath("//div[contains(text(), 'Resend OTP')]");
-    public final By invalidFormatMsg = By.xpath("//div[contains(text(),'Invalid email or phone number format')]");
-    public final By uidNotFound = By.xpath("//div[contains(text(),'Cannot find user with uid')]");
-    public final By maxOtpAttempts = By.xpath("//div[contains(text(),'Since you have exceeded the maximum OTP attempts')]");
-    public final By otpField = By.xpath("//div[contains(text(),'Please enter a valid OTP')]");
-    private final By xmark = By.xpath("//img[@alt=\"sheet_component_img\"]");
-    private final By iFrame = By.name("HyperServices");
+    public final By maxOtpAttempts = By.xpath("//p[contains(text(),'Since you have exceeded the maximum OTP attempts')]");
 
 
     public LoginPage(AppiumDriver driver) {
@@ -41,58 +29,50 @@ public class LoginPage extends BasePage {
     }
 
 
-    public void clickOnXmark() {
-        click(xmark);
+    // ---------- Common Actions ----------
+    public void clickOnLoginButton() {
+        waitForVisibility(login);
+        clickOnElement(login);
     }
 
-    public void clickOnLogin() {
-        waitForOverlayToDisappear();
-        click(login);
-//        js.executeScript("arguments[0].click();", login);
-    }
 
-    public void enterUserID(String user) {
-        waitForVisibility(userID);
-        click(userID);
-        clear(userID);
-        sendKeys(userID, user);
-    }
-
-    public boolean clickOnTheProceedButton() {
-        if (isElementPresent(invalidFormatMsg)) {
-            return false;
-        }
+    public void clickOnLogout() {
         try {
-            click(proceedBtn);
-        } catch (Exception e) {
-            return false;
-        }
-        if (isElementPresent(uidNotFound)) {
-            return false;
-        }
-        if (isElementPresent(maxOtpAttempts)) {
-            return false;
-        }
-        return true;
+            if (!isElementDisplayed(logout)) {
+                clickElementWithScroll(logout);
+            }
+        } catch (Exception e) {}
+
     }
 
-    public void enterOTP(String otp) {
-
-        for (int i = 0; i < otp.length(); i++) {
-            char digit = otp.charAt(i);
-            String xpath = "//input[@aria-label='Please enter OTP character " + (i + 1) + "']";
-            WebElement otpInput = new WebDriverWait(driver, Duration.ofSeconds(5)).until(ExpectedConditions.elementToBeClickable(By.xpath(xpath)));
-
-            otpInput.click();
-            otpInput.sendKeys(String.valueOf(digit));
-        }
+    public void enterUserID(String str) {
+        isElementDisplayed(userID);
+        sendKeys(userID, str);
     }
 
-    public boolean clickOnTheVerifyOTPButton() {
+    public boolean clickOnTheContinueButton() {
+        clickOnElement(continueButton);
         try {
-            click(verifyOTPBtn);
+            wait.until(ExpectedConditions.or(
+                    ExpectedConditions.visibilityOfElementLocated(invalidFormatMsg),
+                    ExpectedConditions.visibilityOfElementLocated(maxOtpAttempts)
+            ));
+            return false;
+        } catch (TimeoutException e) {
+            return true;
+        }
+    }
+
+    public void enterOTP(String str) {
+        clickOnElement(otp);
+        sendKeys(otp, str);
+    }
+
+    public boolean clickOnTheVerifyOTP() {
+        try {
+            clickOnElement(continueButton);
             try {
-                wait.until(ExpectedConditions.visibilityOfElementLocated(otpField));
+                wait.until(ExpectedConditions.visibilityOfElementLocated(invalidOTP));
                 return false;
             } catch (TimeoutException te) {
                 return true;
@@ -103,44 +83,9 @@ public class LoginPage extends BasePage {
         }
     }
 
-    public boolean isUserLoggedIn() {
-        try{
-            waitForOverlayToDisappear();
-            WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(5));
-            WebElement welCome = wait.until(ExpectedConditions.visibilityOfElementLocated(hello));
-            return welCome.isDisplayed();
-        } catch (TimeoutException te) {
-            return false;
-        }
-    }
-
-    public void clickOnLogout() {
-        try {
-            waitForOverlayToDisappear();
-            clickElementWithScroll(logout);
-        } catch (Exception e) {
-            throw new RuntimeException(e);
-        }
-    }
-
-    public void stableClick(By locator) {
-        for (int i = 0; i < 3; i++) {
-            try {
-                WebElement el = wait.until(ExpectedConditions.visibilityOfElementLocated(locator));
-                el.click();
-                return;
-            } catch (Exception ignored) {}
-        }
-        throw new RuntimeException("Could not click element: " + locator);
-    }
-    public void clickOnYesButton() {
-     stableClick(yesLogout);
-    }
-
-
-
-
     public void clickOnResendOTP() {
-        click(resendOTP);
+        isElementDisplayed(resendOTP);
+        clickOnElement(resendOTP);
     }
+
 }
